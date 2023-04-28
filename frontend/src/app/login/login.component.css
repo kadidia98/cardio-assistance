@@ -1,0 +1,65 @@
+ .container-fluid{
+  
+    background-image: url('/assets/accueilcardiaque.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+   min-height: 100vh;
+    
+} 
+/*.login{
+    min-height: 100vh;
+    background-image:url('/assets/accueilcardiaque.jpg'); 
+    background-size: cover;
+    background-position: center;
+}*/
+.me{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 13.4%;
+    bottom: 0%;
+    border-radius: 40px;
+}
+ .j{
+    position: absolute;
+    left: 36.79%;
+    right: 36.64%;
+   top: -16%;
+    bottom: 75.28%;
+   
+ }
+ .le{
+    position: absolute;
+width: 500px;
+height: 500px;
+left: 1000px;
+top: 300px;
+
+}
+ .p{
+    box-sizing: border-box;
+    position: absolute;
+    left: 10.53%;
+    right: 7.94%;
+    top: 33.01%;
+    bottom: 54.7%;
+    
+    
+   /* background: rgba(255, 255, 255, 0.68);*/
+ }
+ .titre{
+    display: flex;
+    justify-content: center;
+    
+ }
+ .db{
+    opacity: 75%;
+    border-radius: 13px;
+    box-sizing: border-box;
+    border: 1px solid #0769B0;
+    height: 50px;
+ }
+ .mm{
+margin-top: -30px;
+ }
