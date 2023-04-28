@@ -55,7 +55,7 @@ import { LoginComponent } from './login/login.component';
 
 import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { DocComponent } from './doc/doc.component';
+
 
 
 
@@ -65,11 +65,10 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http'; //intersepteurs
 @NgModule({
   declarations: [
     AppComponent,
-
+    LoginComponent,
     AdminComponent,
  DashboardComponent,
- DocComponent,
-LoginComponent,
+
     InscriptionComponent
   ],
   imports: [

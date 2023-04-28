@@ -5,7 +5,8 @@ import { SecretaireComponent } from './secretaire/secretaire.component';
 import { AdminComponent } from './admin/admin.component';
 const routes: Routes = [
   {path: '', component: LoginComponent},
-{path: 'admin', component: AdminComponent}
+{path: 'admin', component: AdminComponent},
+{path: 'secretaire', component: SecretaireComponent}
 ];
 
 @NgModule({
