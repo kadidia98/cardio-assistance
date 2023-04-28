@@ -6,8 +6,12 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { DocComponent } from './doc/doc.component';
+
 import { InscriptionComponent } from './inscription/inscription.component';
+import { AdmissionPatientComponent } from './admission-patient/admission-patient.component';
+import { ListePatientComponent } from './liste-patient/liste-patient.component';
+import { DossierMedicalComponent } from './dossier-medical/dossier-medical.component';
+import { SecretaireComponent } from './secretaire/secretaire.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +19,12 @@ import { InscriptionComponent } from './inscription/inscription.component';
     LoginComponent,
     AdminComponent,
     DashboardComponent,
-    DocComponent,
-    InscriptionComponent
+    
+    InscriptionComponent,
+    AdmissionPatientComponent,
+    ListePatientComponent,
+    DossierMedicalComponent,
+    SecretaireComponent
   ],
   imports: [
     BrowserModule,
