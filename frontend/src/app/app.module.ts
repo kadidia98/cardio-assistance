@@ -51,7 +51,9 @@ import { DocComponent } from './doc/doc.component';
 
 
 
-import { HTTP_INTERCEPTORS } from '@angular/common/http'; //intersepteurs
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { TableUserComponent } from './table-user/table-user.component'; //intersepteurs
 
 
 @NgModule({
@@ -62,7 +64,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http'; //intersepteurs
  DashboardComponent,
  DocComponent,
 LoginComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    
+    TableUserComponent
   ],
   imports: [
 
