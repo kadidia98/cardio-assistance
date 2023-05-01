@@ -72,15 +72,10 @@ input{
         }
     
 
-/* ul{
-    li{
-
-            img{
-                width: 70px;
-                height: 70px;
-                border-radius: 50%;
-                background-color: white;
-            }
-
-    }
-} */
+        .mes
+        {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+        }
+       
