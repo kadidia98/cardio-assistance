@@ -55,9 +55,7 @@ import { LoginComponent } from './login/login.component';
 
 import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
-
-
+import { AdmissionPatientComponent } from './admission-patient/admission-patient.component';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http'; //intersepteurs
 
@@ -68,7 +66,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http'; //intersepteurs
     LoginComponent,
     AdminComponent,
  DashboardComponent,
-
+AdmissionPatientComponent,
     InscriptionComponent
   ],
   imports: [
