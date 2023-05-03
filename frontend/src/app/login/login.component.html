@@ -33,7 +33,7 @@
               </div>
 
 
-              <input class="form-control db" formControlName="email"
+              <input class="form-control db" formControlName="email" placeholder="exemple@gmail.com"
                 [ngClass]="{'is-invalid':submitted && registerForm.controls['email'].errors}" type="email">
            
             <div *ngIf="submitted && registerForm.controls['email'].errors" class="text-danger">
