@@ -50,73 +50,90 @@
                   <div class="myform d-flex"  style="padding: 1rem;">
                     <div class="container part1 ">
              <div class="my-4">
-          <label for="email">Prenom</label>
+          <label for="prenom">Prenom</label>
+              <!-- Debut Prenom -->
           <div class="form-group">
             
               <div class="input-group-prepend"
-                [ngClass]="{'invalid':submitted &&registerForm.controls['password'].errors}" type="email">
+                [ngClass]="{'invalid':submitted &&registerForm.controls['prenom'].errors}" type="text">
              
               </div>
-              <input class="form-control db" formControlName="password"
-                [ngClass]="{'is-invalid':submitted && registerForm.controls['password'].errors}" type="password">
+              <input type="text" class="form-control db" formControlName="prenom"
+                [ngClass]="{'is-invalid':submitted && registerForm.controls['prenom'].errors}" >
                 
            
-            <div *ngIf="submitted && registerForm.controls['password'].errors" class="text-danger">
-              <div *ngIf="submitted && registerForm.controls['password'].errors['required']">
+            <div *ngIf="submitted && registerForm.controls['prenom'].errors" class="text-danger">
+              <div *ngIf="submitted && registerForm.controls['prenom'].errors['required']">
                 Champs requis
               </div>
               
             </div>
           </div><br>
-          <label for="email">Date-Naissance</label>
+      <!-- Fin Prenom -->
+        
+         <!-- debut date -->
+        
+          <label for="date_naiss">Date-Naissance</label>
           <div class="form-group">
             
             <div class="input-group-prepend"
-              [ngClass]="{'invalid':submitted &&registerForm.controls['password'].errors}" type="email">
+              [ngClass]="{'invalid':submitted &&registerForm.controls['date_naiss'].errors}" type="date">
            
             </div>
-            <input class="form-control db" formControlName="password"
-              [ngClass]="{'is-invalid':submitted && registerForm.controls['password'].errors}" type="password">
+            <input class="form-control db" formControlName="date_naiss"
+              [ngClass]="{'is-invalid':submitted && registerForm.controls['date_naiss'].errors}" type="date">
               
          
-          <div *ngIf="submitted && registerForm.controls['password'].errors" class="text-danger">
-            <div *ngIf="submitted && registerForm.controls['password'].errors['required']">
+          <div *ngIf="submitted && registerForm.controls['date_naiss'].errors" class="text-danger">
+            <div *ngIf="submitted && registerForm.controls['date_naiss'].errors['required']">
               Champs requis
             </div>
            
           </div>
         </div><br>
-        <label for="email">Sexe</label>
+        <!-- <label for="pet-select">Choose a pet:</label>
+
+        <select name="pets" id="pet-select">
+            <option value="">--Please choose an option--</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="hamster">Hamster</option>
+            <option value="parrot">Parrot</option>
+            <option value="spider">Spider</option>
+            <option value="goldfish">Goldfish</option>
+        </select> -->
+
+        <label for="sexe">Sexe</label>
         <div class="form-group">
           
           <div class="input-group-prepend"
-            [ngClass]="{'invalid':submitted &&registerForm.controls['password'].errors}" type="email">
+            [ngClass]="{'invalid':submitted &&registerForm.controls['sexe'].errors}" type="text">
          
           </div>
-          <input class="form-control db" formControlName="password"
-            [ngClass]="{'is-invalid':submitted && registerForm.controls['password'].errors}" type="password">
+          <input class="form-control db" formControlName="sexe"
+            [ngClass]="{'is-invalid':submitted && registerForm.controls['sexe'].errors}" type="text">
             
        
-        <div *ngIf="submitted && registerForm.controls['password'].errors" class="text-danger">
-          <div *ngIf="submitted && registerForm.controls['password'].errors['required']">
+        <div *ngIf="submitted && registerForm.controls['sexe'].errors" class="text-danger">
+          <div *ngIf="submitted && registerForm.controls['sexe'].errors['required']">
             Champs requis
           </div>
          
         </div>
       </div><br>
-      <label for="email">Poids</label>
+      <label for="poids">Poids</label>
       <div class="form-group">
         
         <div class="input-group-prepend"
-          [ngClass]="{'invalid':submitted &&registerForm.controls['password'].errors}" type="email">
+          [ngClass]="{'invalid':submitted &&registerForm.controls['poids'].errors}" type="number">
        
         </div>
-        <input class="form-control db" formControlName="password"
-          [ngClass]="{'is-invalid':submitted && registerForm.controls['password'].errors}" type="password">
+        <input class="form-control db" formControlName="poids"
+          [ngClass]="{'is-invalid':submitted && registerForm.controls['poids'].errors}" type="poids">
           
      
-      <div *ngIf="submitted && registerForm.controls['password'].errors" class="text-danger">
-        <div *ngIf="submitted && registerForm.controls['password'].errors['required']">
+      <div *ngIf="submitted && registerForm.controls['poids'].errors" class="text-danger">
+        <div *ngIf="submitted && registerForm.controls['poids'].errors['required']">
           Champs requis
         </div>
        
@@ -129,84 +146,78 @@
 
         <div class="container part2">
           <div class="my-4">
-       <label for="email">Nom</label>
+       <label for="nom">Nom</label>
        <div class="form-group">
          
            <div class="input-group-prepend"
-             [ngClass]="{'invalid':submitted &&registerForm.controls['password'].errors}" type="email">
+             [ngClass]="{'invalid':submitted &&registerForm.controls['nom'].errors}" type="text">
           
            </div>
-           <input class="form-control db" formControlName="password"
-             [ngClass]="{'is-invalid':submitted && registerForm.controls['password'].errors}" type="password">
+           <input class="form-control db" formControlName="nom"
+             [ngClass]="{'is-invalid':submitted && registerForm.controls['nom'].errors}" type="text">
              
         
-         <div *ngIf="submitted && registerForm.controls['password'].errors" class="text-danger">
-           <div *ngIf="submitted && registerForm.controls['password'].errors['required']">
+         <div *ngIf="submitted && registerForm.controls['nom'].errors" class="text-danger">
+           <div *ngIf="submitted && registerForm.controls['nom'].errors['required']">
             Champs requis
            </div>
-           <div *ngIf="submitted && registerForm.controls['password'].errors['minlength']">
-             Le mot de passe doit contenir 5 caractères
-           </div>
+          
          </div>
        </div><br>
-       <label for="email">date Admission</label>
+       <label for="date_Admission">date Admission</label>
        <div class="form-group">
          
          <div class="input-group-prepend"
-           [ngClass]="{'invalid':submitted &&registerForm.controls['password'].errors}" type="email">
+           [ngClass]="{'invalid':submitted &&registerForm.controls['date_Admission'].errors}" type="date">
         
          </div>
-         <input class="form-control db" formControlName="password"
-           [ngClass]="{'is-invalid':submitted && registerForm.controls['password'].errors}" type="password">
+         <input class="form-control db" formControlName="date_Admission"
+           [ngClass]="{'is-invalid':submitted && registerForm.controls['date_Admission'].errors}" type="date-Admission">
            
       
-       <div *ngIf="submitted && registerForm.controls['password'].errors" class="text-danger">
-         <div *ngIf="submitted && registerForm.controls['password'].errors['required']">
+       <div *ngIf="submitted && registerForm.controls['date_Admission'].errors" class="text-danger">
+         <div *ngIf="submitted && registerForm.controls['date_Admission'].errors['required']">
           Champs requis
          </div>
-         <div *ngIf="submitted && registerForm.controls['password'].errors['minlength']">
-           Le mot de passe doit contenir 5 caractères
-         </div>
+        
        </div>
      </div><br>
-     <label for="email">Téléphone</label>
+     <label for="tel">Téléphone</label>
      <div class="form-group">
        
        <div class="input-group-prepend"
-         [ngClass]="{'invalid':submitted &&registerForm.controls['password'].errors}" type="email">
+         [ngClass]="{'invalid':submitted &&registerForm.controls['tel'].errors}" type="number">
       
        </div>
-       <input class="form-control db" formControlName="password"
-         [ngClass]="{'is-invalid':submitted && registerForm.controls['password'].errors}" type="password">
+       <input class="form-control db" formControlName="tel"
+         [ngClass]="{'is-invalid':submitted && registerForm.controls['tel'].errors}" type="number">
          
     
-     <div *ngIf="submitted && registerForm.controls['password'].errors" class="text-danger">
-       <div *ngIf="submitted && registerForm.controls['password'].errors['required']">
+     <div *ngIf="submitted && registerForm.controls['tel'].errors" class="text-danger">
+       <div *ngIf="submitted && registerForm.controls['tel'].errors['required']">
         Champs requis
        </div>
-       <div *ngIf="submitted && registerForm.controls['password'].errors['minlength']">
-         Le mot de passe doit contenir 5 caractères
+       <div *ngIf="submitted && registerForm.controls['tel'].errors['minlength']">
+         Le mot de passe doit contenir 9 caractères
        </div>
      </div>
    </div><br>
-   <label for="email">Groupe-Sanguin</label>
+   <label for="group_sang">Groupe-Sanguin</label>
    <div class="form-group">
      
      <div class="input-group-prepend"
-       [ngClass]="{'invalid':submitted &&registerForm.controls['password'].errors}" type="email">
+       [ngClass]="{'invalid':submitted &&registerForm.controls['group_sang'].errors}" type="text">
     
      </div>
-     <input class="form-control db" formControlName="password"
-       [ngClass]="{'is-invalid':submitted && registerForm.controls['password'].errors}" type="password">
+     <input class="form-control db" formControlName="group_sang"
+       [ngClass]="{'is-invalid':submitted && registerForm.controls['group_sang'].errors}" type="text">
        
   
-   <div *ngIf="submitted && registerForm.controls['password'].errors" class="text-danger">
-     <div *ngIf="submitted && registerForm.controls['password'].errors['required']">
+   <div *ngIf="submitted && registerForm.controls['group_sang'].errors" class="text-danger">
+     <div *ngIf="submitted && registerForm.controls['group_sang'].errors['required']">
       Champs requis
      </div>
-     <div *ngIf="submitted && registerForm.controls['password'].errors['minlength']">
-       Le mot de passe doit contenir 5 caractères
-     </div>
+     
    </div>
  </div>
        </div>

@@ -14,10 +14,15 @@ export class AdmissionPatientComponent implements OnInit {
 
   ngOnInit() {
       this.registerForm = this.formBuilder.group({
-          firstName: ['', Validators.required],
-          lastName: ['', Validators.required],
-          email: ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-          password: ['', [Validators.required, Validators.minLength(6)]]
+        prenom: ['', Validators.required],
+          date_naiss: ['', Validators.required],
+          sexe: ['', Validators.required],
+          pods: ['', Validators.required],
+          nom: ['', Validators.required],
+          date_Admission : ['', Validators.required],
+          group_sang : ['', Validators.required],
+         // email: ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+          tel: ['', [Validators.required, Validators.minLength(9)]]
       });
   }
 
