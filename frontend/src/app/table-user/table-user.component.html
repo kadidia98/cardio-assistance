@@ -32,13 +32,14 @@
               </thead>
               <tbody >
               <!--  |filter:term  | paginate: { itemsPerPage: 5, currentPage: p } -->
-                <tr *ngFor="let user of users   | paginate: { itemsPerPage: 5, currentPage: p }  " >
+                <tr *ngFor="let user of users     | paginate: { itemsPerPage: 5, currentPage: p }  " >
                     <td> {{user.prenom}}</td>
                     <td> {{user.nom}} </td> 
-                  <td> {{user.prenom}} </td>
-                 <td> {{user.email}} </td>
+                  <td> {{user.email}} </td>
+                 
                   <td>{{user.telephone}}</td>
                     <td> {{user.profil}} </td>
+                    <td> {{user.etat}} </td>
                   <td>
 
 
