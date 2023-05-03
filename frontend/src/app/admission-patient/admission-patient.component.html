@@ -11,8 +11,8 @@
  <div class="container-fluid" style="min-height: 100vh;filter: contrast(95%);">
     <div class="row">
         <div class="col-lg-2" style="height: 100vh;background-color:#4AAAF0;">
-            <img class="" src="/assets/logo.png" alt="logo" style="height:100px ;margin-left: 15%;margin-top: 12%;">
-            <h5 class="text-white">Cardio-assistance</h5><br>
+            <img class="" src="/assets/logo.png" alt="logo" style="height:100px ;margin-left: 30%;margin-top: 12%;">
+            <h5 class="text-white text-center">Cardio-assistance</h5><br>
             
             <button class="btn1 mt-3" style="background-color: #0769B0;color: white;margin-left: 7.5%; width: 70%; padding: 2%;"> <span style="font-size: 1.2rem;">Liste Patient</span></button><br><br>
             <button class="btn1 mt-3" style="background-color: #0769B0;color: white;margin-left: 7.5%; width: 70%;padding: 2%;"> <span style="font-size: 1.2rem;">Ajout Patient</span></button><br><br>
@@ -29,11 +29,220 @@
                     <div class="row">
                         <div class="col-lg-8">
                            
-                            
+                             
+                          <!-- main app container -->
+<div class="jumbotron">
+  <div class="container ">
+      <div class="row  ">
+          <div class=" offset-md-3">
+
+            <div class="card  " style="width: 30rem; opacity: 85%; height: 40rem;background-color:#4AAAF0; color:white">
+             
+              <div class="card-body  text-black ">
+                <h5 class="card-title text-center">Admission Patient</h5>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                
+                 
+
+                  <!-- essaie -->
+               
+                  <!-- fin-essaie -->
+                  <div class="myform d-flex"  style="padding: 1rem;">
+                    <div class="container part1 ">
+             <div class="my-4">
+          <label for="prenom">Prenom</label>
+              <!-- Debut Prenom -->
+          <div class="form-group">
+            
+              <div class="input-group-prepend"
+                [ngClass]="{'invalid':submitted &&registerForm.controls['prenom'].errors}" type="text">
+             
+              </div>
+              <input type="text" class="form-control db" formControlName="prenom"
+                [ngClass]="{'is-invalid':submitted && registerForm.controls['prenom'].errors}" >
+                
+           
+            <div *ngIf="submitted && registerForm.controls['prenom'].errors" class="text-danger">
+              <div *ngIf="submitted && registerForm.controls['prenom'].errors['required']">
+                Champs requis
+              </div>
+              
+            </div>
+          </div><br>
+      <!-- Fin Prenom -->
+        
+         <!-- debut date -->
+        
+          <label for="date_naiss">Date-Naissance</label>
+          <div class="form-group">
+            
+            <div class="input-group-prepend"
+              [ngClass]="{'invalid':submitted &&registerForm.controls['date_naiss'].errors}" type="date">
+           
+            </div>
+            <input class="form-control db" formControlName="date_naiss"
+              [ngClass]="{'is-invalid':submitted && registerForm.controls['date_naiss'].errors}" type="date">
+              
+         
+          <div *ngIf="submitted && registerForm.controls['date_naiss'].errors" class="text-danger">
+            <div *ngIf="submitted && registerForm.controls['date_naiss'].errors['required']">
+              Champs requis
+            </div>
+           
+          </div>
+        </div><br>
+        <!-- <label for="pet-select">Choose a pet:</label>
+
+        <select name="pets" id="pet-select">
+            <option value="">--Please choose an option--</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="hamster">Hamster</option>
+            <option value="parrot">Parrot</option>
+            <option value="spider">Spider</option>
+            <option value="goldfish">Goldfish</option>
+        </select> -->
+
+        <label for="sexe">Sexe</label>
+        <div class="form-group">
+          
+          <div class="input-group-prepend"
+            [ngClass]="{'invalid':submitted &&registerForm.controls['sexe'].errors}" type="text">
+         
+          </div>
+          <input class="form-control db" formControlName="sexe"
+            [ngClass]="{'is-invalid':submitted && registerForm.controls['sexe'].errors}" type="text">
+            
+       
+        <div *ngIf="submitted && registerForm.controls['sexe'].errors" class="text-danger">
+          <div *ngIf="submitted && registerForm.controls['sexe'].errors['required']">
+            Champs requis
+          </div>
+         
+        </div>
+      </div><br>
+      <label for="poids">Poids</label>
+      <div class="form-group">
+        
+        <div class="input-group-prepend"
+          [ngClass]="{'invalid':submitted &&registerForm.controls['poids'].errors}" type="number">
+       
+        </div>
+        <input class="form-control db" formControlName="poids"
+          [ngClass]="{'is-invalid':submitted && registerForm.controls['poids'].errors}" type="poids">
+          
+     
+      <div *ngIf="submitted && registerForm.controls['poids'].errors" class="text-danger">
+        <div *ngIf="submitted && registerForm.controls['poids'].errors['required']">
+          Champs requis
+        </div>
+       
+      </div>
+    </div><br>
+          </div>
+        </div>
+
+        
+
+        <div class="container part2">
+          <div class="my-4">
+       <label for="nom">Nom</label>
+       <div class="form-group">
+         
+           <div class="input-group-prepend"
+             [ngClass]="{'invalid':submitted &&registerForm.controls['nom'].errors}" type="text">
+          
+           </div>
+           <input class="form-control db" formControlName="nom"
+             [ngClass]="{'is-invalid':submitted && registerForm.controls['nom'].errors}" type="text">
+             
+        
+         <div *ngIf="submitted && registerForm.controls['nom'].errors" class="text-danger">
+           <div *ngIf="submitted && registerForm.controls['nom'].errors['required']">
+            Champs requis
+           </div>
+          
+         </div>
+       </div><br>
+       <label for="date_Admission">date Admission</label>
+       <div class="form-group">
+         
+         <div class="input-group-prepend"
+           [ngClass]="{'invalid':submitted &&registerForm.controls['date_Admission'].errors}" type="date">
+        
+         </div>
+         <input class="form-control db" formControlName="date_Admission"
+           [ngClass]="{'is-invalid':submitted && registerForm.controls['date_Admission'].errors}" type="date-Admission">
+           
+      
+       <div *ngIf="submitted && registerForm.controls['date_Admission'].errors" class="text-danger">
+         <div *ngIf="submitted && registerForm.controls['date_Admission'].errors['required']">
+          Champs requis
+         </div>
+        
+       </div>
+     </div><br>
+     <label for="tel">Téléphone</label>
+     <div class="form-group">
+       
+       <div class="input-group-prepend"
+         [ngClass]="{'invalid':submitted &&registerForm.controls['tel'].errors}" type="number">
+      
+       </div>
+       <input class="form-control db" formControlName="tel"
+         [ngClass]="{'is-invalid':submitted && registerForm.controls['tel'].errors}" type="number">
+         
+    
+     <div *ngIf="submitted && registerForm.controls['tel'].errors" class="text-danger">
+       <div *ngIf="submitted && registerForm.controls['tel'].errors['required']">
+        Champs requis
+       </div>
+       <div *ngIf="submitted && registerForm.controls['tel'].errors['minlength']">
+         Le mot de passe doit contenir 9 caractères
+       </div>
+     </div>
+   </div><br>
+   <label for="group_sang">Groupe-Sanguin</label>
+   <div class="form-group">
+     
+     <div class="input-group-prepend"
+       [ngClass]="{'invalid':submitted &&registerForm.controls['group_sang'].errors}" type="text">
+    
+     </div>
+     <input class="form-control db" formControlName="group_sang"
+       [ngClass]="{'is-invalid':submitted && registerForm.controls['group_sang'].errors}" type="text">
+       
+  
+   <div *ngIf="submitted && registerForm.controls['group_sang'].errors" class="text-danger">
+     <div *ngIf="submitted && registerForm.controls['group_sang'].errors['required']">
+      Champs requis
+     </div>
+     
+   </div>
+ </div>
+       </div>
+     </div>
+        </div>
+
+
+                  <div class="form-group">
+                      <button class="btn btn-danger text-white">Enregistrer</button>
+                  </div>
+              </form>
+              </div>
+            </div>
+              
+             
+          </div>
+      </div>
+  </div>
+</div>
+
+
 
                         </div>
                         <div class="col-lg-4 mt-3">
-                            <img src="/assets/patient.png" style="height:70% ;">
+                            <img src="/assets/patient.png" style="height:80% ;">
                         </div> 
                     </div>
                </div>
