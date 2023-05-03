@@ -7,6 +7,7 @@ import { ListePatientComponent } from './liste-patient/liste-patient.component';
 import { AdmissionPatientComponent } from './admission-patient/admission-patient.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DossierMedicalComponent } from './dossier-medical/dossier-medical.component';
+import { TableUserComponent } from './table-user/table-user.component';
 const routes: Routes = [
   {path: '', component: LoginComponent},
 {path: 'admin', component: AdminComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
 {path: 'Admission', component: AdmissionPatientComponent},
 {path: 'Dasboard', component: DashboardComponent},
 {path: 'Dossier', component: DossierMedicalComponent},
+{path: 'table-user', component: TableUserComponent},
 ];
 
 @NgModule({

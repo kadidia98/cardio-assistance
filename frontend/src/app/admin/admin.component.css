@@ -23,10 +23,13 @@
   background-color: #0769B0;
   cursor: pointer;
 }
-.active{
+
+.activeLink{
   background-color: #FC0A0A;
   outline: none;
 }
+
+
 /* .e:focus{
   background-color: #91D333;
   cursor: pointer;

@@ -56,12 +56,16 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-
-
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
+;
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { TableUserComponent } from './table-user/table-user.component'; //intersepteurs
+import { CommonModule } from '@angular/common';
+import { FilterPipe } from './filter.pipe';
+import { ListeArchiveComponent } from './liste-archive/liste-archive.component';
+import { filter } from 'rxjs';
 
 
 @NgModule({
@@ -70,8 +74,10 @@ import { TableUserComponent } from './table-user/table-user.component'; //inters
     LoginComponent,
     AdminComponent,
  DashboardComponent,
-
-    InscriptionComponent
+TableUserComponent,
+    InscriptionComponent,
+    FilterPipe,
+    ListeArchiveComponent
   ],
   imports: [
 
@@ -82,7 +88,10 @@ import { TableUserComponent } from './table-user/table-user.component'; //inters
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-   
+    CommonModule,
+ NgxPaginationModule,
+ Ng2SearchPipeModule,
+ 
     
 
 

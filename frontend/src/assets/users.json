@@ -1,0 +1,68 @@
+[
+    {
+       
+        "prenom": "nana",
+        "nom": "fall",
+        "email": "ba@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "false",
+        "__v": 0
+      },
+      {
+      
+        "prenom": "khadija",
+        "nom": "ba",
+        "email": "khady123@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "true",
+        "__v": 0
+      },
+      {
+       
+        "prenom": "nana",
+        "nom": "fall",
+        "email": "ba@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "false",
+        "__v": 0
+      },
+      {
+      
+        "prenom": "khadija",
+        "nom": "ba",
+        "email": "khady123@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "true",
+        "__v": 0
+      },
+      {
+       
+        "prenom": "nana",
+        "nom": "fall",
+        "email": "ba@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "false",
+        "__v": 0
+      },
+      {
+      
+        "prenom": "khadija",
+        "nom": "ba",
+        "email": "khady123@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "true",
+        "__v": 0
+      }
+]
