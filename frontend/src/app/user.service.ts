@@ -40,10 +40,7 @@ export class UserService {
   listUser() {
     return this.http.get('http://localhost:3000/endpoint/ ');
   }
-  //Here we have user température et pression
-  listTempHum() {
-    return this.http.get('http://localhost:3000/endpoint/temp ');
-  }
+  
 
 
 
