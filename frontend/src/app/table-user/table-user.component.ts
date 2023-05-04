@@ -29,12 +29,81 @@ vide = false;
   id: any;
 // pagination
   p: number = 1;
-term: any;
+termFilter!: string;
 updateForm: FormGroup;
   code: any;
  /*  showcode: boolean;
   message: string; */
   errMsg : any;
+
+   userRec:any[] = [
+    {
+       
+        "prenom": "nana",
+        "nom": "fall",
+        "email": "ba@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "false",
+        "__v": 0
+      },
+      {
+      
+        "prenom": "khadija",
+        "nom": "ba",
+        "email": "khady123@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "true",
+        "__v": 0
+      },
+      {
+       
+        "prenom": "nana",
+        "nom": "fall",
+        "email": "ba@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "false",
+        "__v": 0
+      },
+      {
+      
+        "prenom": "khadija",
+        "nom": "ba",
+        "email": "khady123@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "true",
+        "__v": 0
+      },
+      {
+       
+        "prenom": "nana",
+        "nom": "fall",
+        "email": "ba@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "false",
+        "__v": 0
+      },
+      {
+      
+        "prenom": "khadija",
+        "nom": "ba",
+        "email": "khady123@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "true",
+        "__v": 0
+      }
+]
 
 
 

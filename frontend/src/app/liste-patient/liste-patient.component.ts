@@ -6,7 +6,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./liste-patient.component.css']
 })
 export class ListePatientComponent {
+
+showTab= true;
+
 constructor(private router:Router){
   
+}
+
+switchTab(){
+  this.showTab ? this.showTab = false : this.showTab = true
 }
 }
