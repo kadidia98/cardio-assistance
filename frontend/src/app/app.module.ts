@@ -58,7 +58,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { AdmissionPatientComponent } from './admission-patient/admission-patient.component';
 
-import { HTTP_INTERCEPTORS } from '@angular/common/http'; //intersepteurs
 
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -82,7 +81,7 @@ import { filter } from 'rxjs';
  DashboardComponent,
  
 AdmissionPatientComponent,
-    InscriptionComponent
+    InscriptionComponent,
 
 TableUserComponent,
     InscriptionComponent,
