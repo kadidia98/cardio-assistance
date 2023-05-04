@@ -23,6 +23,10 @@ toggleActiveP(){
   this.isactiveP=!this.isactiveP;
 }
 
+reload(){
+  window.location.reload()
+}
+
 aff(event:any){
   this.AffichePatient=true;
   this.isactiveP=true;
