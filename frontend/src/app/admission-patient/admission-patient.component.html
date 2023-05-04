@@ -172,7 +172,7 @@
         
          </div>
          <input class="form-control db" formControlName="date_Admission"
-           [ngClass]="{'is-invalid':submitted && registerForm.controls['date_Admission'].errors}" type="date-Admission">
+           [ngClass]="{'is-invalid':submitted && registerForm.controls['date_Admission'].errors}" type="date">
            
       
        <div *ngIf="submitted && registerForm.controls['date_Admission'].errors" class="text-danger">
@@ -214,9 +214,7 @@
        
   
    <div *ngIf="submitted && registerForm.controls['group_sang'].errors" class="text-danger">
-     <div *ngIf="submitted && registerForm.controls['group_sang'].errors['required']">
-      Champs requis
-     </div>
+   
      
    </div>
  </div>

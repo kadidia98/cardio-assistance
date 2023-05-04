@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: '', component: LoginComponent},
 {path: 'admin', component: AdminComponent},
 {path: 'secretaire', component: SecretaireComponent},
-{path: 'medcin', component: ListePatientComponent},
+{path: 'listP', component: ListePatientComponent},
 {path: 'Admission', component: AdmissionPatientComponent},
 {path: 'Dasboard', component: DashboardComponent},
 {path: 'Dossier', component: DossierMedicalComponent},
