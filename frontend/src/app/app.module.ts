@@ -1,13 +1,13 @@
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+//import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { ListePatientComponent } from './liste-patient/liste-patient.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,7 +28,7 @@ import { FilterPipe } from './filter.pipe';
 import { ListeArchiveComponent } from './liste-archive/liste-archive.component';
 import { filter } from 'rxjs';
 import { AdmissionPatientComponent } from './admission-patient/admission-patient.component';
-
+import { DossierMedicalComponent } from './dossier-medical/dossier-medical.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,9 @@ TableUserComponent,
     InscriptionComponent,
     FilterPipe,
     ListeArchiveComponent,
-    AdmissionPatientComponent
+    AdmissionPatientComponent,
+    ListePatientComponent,
+    DossierMedicalComponent
   ],
   imports: [
 
