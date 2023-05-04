@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page-secretaire</title>
 </head>
+
 <body>
 
- <div class="container-fluid" style="min-height: 100vh;filter: contrast(95%);">
-    <div class="row">
-        <div class="col-lg-2" style="height: 100vh;background-color:#4AAAF0;">
-            <img class="" src="/assets/logo.png" alt="logo" style="height:100px ;margin-left: 30%;margin-top: 12%;">
-            <h5 class="text-white text-center">Cardio-assistance</h5><br>
-            
-            <button class="btn1 mt-3" [class.activeLink]="isactiveP" (click)="aff($event)" style="background-color: #0769B0;color: white;margin-left: 7.5%; width: 70%; padding: 2%;" name="name" #myNameElem data-bs-toggle="button"><a href="listP"  style="font-size: 1.2rem;">Liste</a></button><br><br>
+    <div class="container-fluid" style="min-height: 100vh;filter: contrast(95%);">
+        <div class="row">
+            <div class="col-lg-2" style="height: 100vh;background-color:#4AAAF0;">
+                <img class="" src="/assets/logo.png" alt="logo" style="height:100px ;margin-left: 30%;margin-top: 12%;">
+                <h5 class="text-white text-center">Cardio-assistance</h5><br>
 
-            <button class="btn1 mt-3" style="background-color: #0769B0;color: white;margin-left: 7.5%;width: 70%; padding: 2%;"><a (click)="destroy()"> <span style="font-size: 1.2rem;">Deconnexion</span></a></button><br><br>
-       
+                <button class="btn1 mt-3" [class.activeLink]="isactiveP" (click)="aff($event); reload()"
+                    style="background-color: #0769B0;color: white;margin-left: 7.5%; width: 70%; padding: 2%;"
+                    name="name" #myNameElem data-bs-toggle="button">
+                    <span style="font-size: 1.2rem;">Liste</span>
+                    </button><br><br>
 
-<!-- ess -->
+                <button class="btn1 mt-3"
+                    style="background-color: #0769B0;color: white;margin-left: 7.5%;width: 70%; padding: 2%;"><a
+                        (click)="destroy()"> <span style="font-size: 1.2rem;">Deconnexion</span></a></button><br><br>
 
-<!--  -->
 
-        </div>
-        <div class="col-lg-10" style="height:100vh;padding: 0;">
+                <!-- ess -->
+
+                <!--  -->
+
+            </div>
+            <div class="col-lg-10" style="height:85vh;padding: 0;">
                 <div class="navbar d-flex" style="height: 15%;background-color: #4AAAF0;">
-                <h1 class="titre " style="color:white;margin-left: 15%">Espace Medcin</h1>
-               <img src="/assets/user.png" alt=""  style="height:10px ;margin-left: 30%;"><h6 style="color: white;margin-right: 7.5%;">Nom et Prenom</h6>
+                    <h1 class="titre " style="color:white;margin-left: 15%">Espace Medcin</h1>
+                    <img src="/assets/user.png" alt="" style="height:10px ;margin-left: 30%;">
+                    <h6 style="color: white;margin-right: 7.5%;">Nom et Prenom</h6>
                 </div>
-              
+
                 <app-liste-patient *ngIf="AffichePatient"></app-liste-patient>
-                
-            <router-outlet></router-outlet>
-            
+
+                <router-outlet></router-outlet>
+
+
+            </div>
 
         </div>
-        
-    </div>
 
-</div>
+    </div>
 </body>
+
 </html>
