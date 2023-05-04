@@ -42,6 +42,10 @@ import { EspaceSecretaireComponent } from './espace-secretaire/espace-secretaire
     LoginComponent,
     AdminComponent,
  DashboardComponent,
+ 
+AdmissionPatientComponent,
+    InscriptionComponent,
+
 TableUserComponent,
     InscriptionComponent,
     FilterPipe,

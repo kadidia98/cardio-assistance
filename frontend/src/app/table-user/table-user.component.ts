@@ -10,6 +10,7 @@ import { User } from '../user';
 import { HttpClient } from '@angular/common/http';
 import { filter } from 'rxjs';
 
+
 @Component({
   selector: 'app-table-user',
   templateUrl: './table-user.component.html',
@@ -107,32 +108,7 @@ loadUser(){
   });
 }
 
-//switch
 
-changeRole=(id:any,role:any)=> {
-  role == "Administrateur" ? role ="Utilisateur": role = "Administrateur"
-  const user ={
-   role : role
-  }
- /*  this.userService.updateUser(id,user).subscribe(
-    data=>{ */
-      Swal.fire({
-        title: 'swhitch!',
-        text: 'voulez-vous vraiment changer de role ?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Oui',
-        cancelButtonText: 'Non',
-      }).then((result) => {
-        if (result.value) {
-      this.userService.updateUser(id,user).subscribe(
-        data=>{
-          this.ngOnInit();
-        });
-      }else if (result.dismiss === Swal.DismissReason.cancel) {
-      }
-      })
-    }
 /* } */
 
 
