@@ -18,15 +18,15 @@
     <button type="button" id="test" class="btn e card-title rounded-4 col-md-10" [class.activeLink]="isActiveTable"  (click)="aff($event)"  name="name" #myNameElem
       style="margin-left: 7.5%;  margin-top: 34%;" data-bs-toggle="button" >
       <a href="table-user" class="dropdown-item "> 
-        <span style="font-size: 1.5rem; color: aliceblue; ">liste </span>
+        <span style="font-size: 1.5rem; color: aliceblue; ">Liste active </span>
       </a> 
     </button>
     <button type="button" class="btn e card-title rounded-4 col-md-10 " style="margin-left: 7.5%; margin-top: 15%;"
       data-bs-toggle="modal" data-bs-target="#modalRegisterForm"> <span
-        style="font-size: 24px; color: aliceblue; ">créer un compte</span> </button>
+        style="font-size: 24px; color: aliceblue; ">Créer un compte</span> </button>
     <button type="button" class="btn e card-title rounded-4  col-md-10"  (click)="affArchive($event)" [class.activeLink]="isActiveArchive"
       style="margin-left: 7.5%; margin-top: 15%;" data-bs-toggle="button"><a 
-        class="dropdown-item "> <span style="font-size: 24px; color: aliceblue;">liste archive</span></a> </button>
+        class="dropdown-item "> <span style="font-size: 24px; color: aliceblue;">Liste archive</span></a> </button>
 
   </aside>
   <!-- /SIDEBAR -->
@@ -113,7 +113,7 @@
                   Le prenom est obligatoire!
                 </div>
                 <div *ngIf="submitted && signupForm.controls['prenom'].errors['cannotContainSpace']">
-                  Espace prénom autorisé
+                  Espace non autorisé
                 </div>
               </div>
             </div>

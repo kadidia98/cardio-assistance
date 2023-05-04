@@ -4,6 +4,7 @@ import { UserService } from "../user.service";
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { UsernameValidator } from './username.validator';
 
+
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 import { User } from '../user';
@@ -29,13 +30,84 @@ vide = false;
   id: any;
 // pagination
   p: number = 1;
-term: any;
+// term: any;
 updateForm: FormGroup;
   code: any;
  /*  showcode: boolean;
   message: string; */
   errMsg : any;
 
+  searchTerm = '';
+  term :any = '';
+  countries: any[] =
+  [
+    {
+       
+        "prenom": "nana",
+        "nom": "fall",
+        "email": "ba@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "false",
+        "__v": 0
+      },
+      {
+      
+        "prenom": "khadija",
+        "nom": "ba",
+        "email": "khady123@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "true",
+        "__v": 0
+      },
+      {
+       
+        "prenom": "nana",
+        "nom": "fall",
+        "email": "ba@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "false",
+        "__v": 0
+      },
+      {
+      
+        "prenom": "khadija",
+        "nom": "ba",
+        "email": "khady123@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "true",
+        "__v": 0
+      },
+      {
+       
+        "prenom": "nana",
+        "nom": "fall",
+        "email": "ba@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "false",
+        "__v": 0
+      },
+      {
+      
+        "prenom": "khadija",
+        "nom": "ba",
+        "email": "khady123@gmail.com",
+        "matricule": "12344",
+        "telephone": "781231414",
+        "profil": "user",
+        "etat": "true",
+        "__v": 0
+      }
+  ] 
 
 
   constructor(
@@ -60,12 +132,10 @@ updateForm: FormGroup;
    }
 
   ngOnInit(): void {
-      this.http.get('assets/users.json').subscribe(data => {
-      
-      this.users = data;
-      console.log(this.data_);
-      
-    });
+      this.http.get<[]>('../../assets/users.json')
+      .subscribe((data: String[]) => {
+        this.countries = data;
+      });;
     //calling function which list users
     this.loadUser();
 
