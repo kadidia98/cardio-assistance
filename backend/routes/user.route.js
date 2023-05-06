@@ -16,7 +16,7 @@ const TemperahumSchema = require('../model/temphum.model')
 const userExpressRoute = express.Router();
 
 // Login
-userExpressRoute.route('/test').post(async (req, res, next) => { //'asunc' for make this midleware asynchrone
+/* userExpressRoute.route('/test').post(async (req, res, next) => { //'asunc' for make this midleware asynchrone
 
     const cle = "MIIEowIBAAKCAQEA0pJxfpy9WqcVEI0FhRb6GqyILM4Fgwp/aC32IMIuGjigD"; // cle secret générer
     let { email, password } = req.body; //recupèration email et password sasie
@@ -72,9 +72,9 @@ userExpressRoute.route('/test').post(async (req, res, next) => { //'asunc' for m
     });
 })
 
-
+ */
 // This middelware show all users
-userExpressRoute.route('/').get(sec,(req, res) => {
+/* userExpressRoute.route('/').get(sec,(req, res) => {
     UserSchema.find((error, data) => {
         if (error) {
             return next(error);
@@ -83,9 +83,9 @@ userExpressRoute.route('/').get(sec,(req, res) => {
 
         }
     })
-});
+}); */
 // This middelware show all users
-userExpressRoute.route('/temp').get((req,res) =>{
+/* userExpressRoute.route('/temp').get((req,res) =>{
     TemperahumSchema.find((error,data) =>{
         if (error) {
             return next(error);
@@ -97,7 +97,7 @@ userExpressRoute.route('/temp').get((req,res) =>{
             
         }
     })
-});
+}); */
 // This middelware show temperature and humidite
 // userExpressRoute.route('/tempHum').get((req,res) =>{
 
@@ -115,7 +115,7 @@ userExpressRoute.route('/temp').get((req,res) =>{
 
 
 //This middelware show one user
-userExpressRoute.route('/user/:id').get((req, res) => {
+/* userExpressRoute.route('/user/:id').get((req, res) => {
     UserSchema.findById(req.params.id, (error, data) => {
         if (error) {
             return next(error);
@@ -124,13 +124,13 @@ userExpressRoute.route('/user/:id').get((req, res) => {
 
         }
     });
-});
+}); */
 
 //This middelware create an user 
 
 userExpressRoute.route('/post').post(async (req, res) => {
 
-    const { nom, prenom, email, matricule, password, role, etat } = req.body;
+    const { nom, prenom, email, matricule, password, role, telephone, etat } = req.body;
 
     /*  const users = [];
       */
@@ -141,6 +141,7 @@ userExpressRoute.route('/post').post(async (req, res) => {
         matricule,
         password,
         role,
+        telephone,
         etat,
 
 
@@ -172,7 +173,7 @@ userExpressRoute.route('/post').post(async (req, res) => {
 
 
 //This middelware update one tempethum
-userExpressRoute.route('/updateTemp/:date').get((req, res, next) => {
+/* userExpressRoute.route('/updateTemp/:date').get((req, res, next) => {
     console.log(req.params);
     TemperahumSchema.findOne({date: req.params.date}, (error, data) => {
 
@@ -184,7 +185,7 @@ userExpressRoute.route('/updateTemp/:date').get((req, res, next) => {
 
         }
     });
-});
+}); */
 
 
 
@@ -192,7 +193,7 @@ userExpressRoute.route('/updateTemp/:date').get((req, res, next) => {
 
 
 //This middelware delete one user
-userExpressRoute.route('/deleteUser/:id').delete((req, res) => {
+/* userExpressRoute.route('/deleteUser/:id').delete((req, res) => {
     UserSchema.findByIdAndRemove(req.params.id, (error, data) => {
         if (error) {
             return next(error)
@@ -203,17 +204,17 @@ userExpressRoute.route('/deleteUser/:id').delete((req, res) => {
 
         }
     });
-});
+}); */
 
 //This middelware update one user
-userExpressRoute.route('/updateUser/:id').put( (req, res) => {
-    UserSchema.findByIdAndUpdate(req.params.id, { $set: req.body }, (error, data) => {
+/* userExpressRoute.route('/updateUser/:id').put( (req, res) => {
+    UserSchema.findByIdAndUpdate(req.params.id, { $set: req.body }, (error, data) => { */
     /*     const email = req.body.email;
         const oldUser = UserSchema.findOne({ email }); */
        /*  if (oldUser) {
             return res.status(200).json({ message: "Email Already Exist. Please Login", emailExiste: true });
         } */
-         if (error) {
+   /*       if (error) {
             return next(error);
         }  else {
             res.json(data);
@@ -221,16 +222,16 @@ userExpressRoute.route('/updateUser/:id').put( (req, res) => {
 
         }
     });
-});
+}); */
 
 
 //modifier mot de passe
 
-userExpressRoute.patch('/updateUser/:id', async(req, res) => {
+/* userExpressRoute.patch('/updateUser/:id', async(req, res) => {
 
-    console.log(req.params.id);
+    console.log(req.params.id); */
     // try {
-          let { actuelPass, newPass } = req.body;
+       /*    let { actuelPass, newPass } = req.body;
   
           const id = req.params.id;
           const updatedData = req.body;
@@ -266,12 +267,12 @@ userExpressRoute.patch('/updateUser/:id', async(req, res) => {
           
           
           
-    //
+    
   
      
   
     
-  });
+  }); */
 
 
         module.exports = userExpressRoute;

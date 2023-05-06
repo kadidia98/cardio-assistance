@@ -18,7 +18,7 @@ const server = http.createServer(app);
 mongoose.set('strictQuery', true);
 
 //Here we are connecting to data base mongoDb by mongoose
-mongoose.connect('mongodb+srv://kdija:kadi26@cluster0.wvdwois.mongodb.net/Admin',
+mongoose.connect('mongodb+srv://kdija:kadi26@cluster0.wvdwois.mongodb.net/personne',
 //mongoose.connect( "mongodb+srv://papa:2605@cluster0.wepa2rr.mongodb.net/homestead?retryWrites=true&w=majority", 
 {useNewUrlParser: true,
 useUnifiedTopology: true})
