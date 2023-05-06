@@ -1,7 +1,7 @@
 const express = require('express');
 
 const app = express();
-let UserSchema = require("../model/user.model");
+let patientSchema = require("../model/patient.model");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
@@ -9,7 +9,7 @@ const sec = require('../middlewares/auth') ;
 
 
 
-const patientSchema = require('../model/patient.model')
+
 
 const TemperahumSchema = require('../model/temphum.model')
 //Here we are going to create a function(middelware) that can get user
@@ -22,7 +22,7 @@ const userExpressRoute = express.Router();
     let { email, password } = req.body; //recupèration email et password sasie
     let existingUser;
 
-    existingUser = await UserSchema.findOne({ email: email });
+    existingUser = await patientSchema.findOne({ email: email });
     if (!existingUser) {
 
         return res.status(200).json({ message: "email doesn't exist...!", code: "noEmail" });
@@ -130,49 +130,7 @@ const userExpressRoute = express.Router();
 
 userExpressRoute.route('/post').post(async (req, res) => {
 
-    const { nom, prenom, email, matricule, password, role, telephone, etat } = req.body;
-
-    /*  const users = [];
-      */
-    const newUser = UserSchema({
-        nom,
-        prenom,
-        email,
-        matricule,
-        password,
-        role,
-        telephone,
-        etat,
-
-        
-    });
-
-    try {
-
-        const oldUser = await UserSchema.findOne({ email });
-
-        if (oldUser) {
-            return res.status(200).json({ message: "Email Already Exist. Please Login", emailExiste: true });
-        }
-
-        const hash = await bcrypt.hash(newUser.password, 10);
-        newUser.password = hash;
-        /*  users.push(newUser); */
-        // res.json(newUser);
-        await newUser.save();
-
-        res.status(201).json(newUser);
-
-    } catch (error) {
-        res.status(400).json({ message: "inscription echouer" })
-    }
-
-})
-
-/* pour patient */
-userExpressRoute.route('/poster').post(async (req, res) => {
-
-    const { nom, prenom, sexe, groupe_sanguin, telephone,dateNaiss, dateAdmission,poids,numero_dossier  } = req.body;
+    const { nom, prenom, sexe, groupe_sanguin, telephone,dateNaiss, dateAdmission  } = req.body;
 
     /*  const users = [];
       */
@@ -180,28 +138,25 @@ userExpressRoute.route('/poster').post(async (req, res) => {
         nom,
         prenom,
         sexe,
-        poids,
         groupe_sanguin,
         telephone,
         dateNaiss,
-        dateAdmission,
-        numero_dossier
+        dateAdmission  
 
 
     });
 
     try {
-        await newUser.save();
 
-        res.status(201).json(newUser);
-
-    console.log('inscription du patient !')
+    
 
     } catch (error) {
-        res.status(400).json({ message: "inscription du patient echouer" })
+        res.status(400).json({ message: "inscription echouer" })
     }
 
 })
+
+
 
 
 //This middelware update one tempethum

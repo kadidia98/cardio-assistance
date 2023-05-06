@@ -6,9 +6,10 @@ cors = require('cors');
 bodyParser =require('body-parser');
 const app = express();
 const temper = require('./model/temphum.model');
-
+const patient= require('./model/patient.model');
 const http = require('http');
 const server = http.createServer(app);
+//const { ErrorEvent } = require('events');
 //const { Server } = require("socket.io");
 
 

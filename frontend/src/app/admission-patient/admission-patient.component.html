@@ -110,27 +110,27 @@
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
-                              <label for="GSang">Groupe-sanguin </label>
-                              <div [ngClass]="{'invalid':submitted && signupForm.controls['GSang'].errors}" class="input-group input-group-alternative mb-3">
+                              <label for="groupe_sanguin">Groupe-sanguin </label>
+                              <div [ngClass]="{'invalid':submitted && signupForm.controls['groupe_sanguin'].errors}" class="input-group input-group-alternative mb-3">
               
-                                <input formControlName="GSang" class="form-control" type="text">
+                                <input formControlName="groupe_sanguin" class="form-control" type="text">
                               </div>
-                                <div style="margin-top: -10px;" *ngIf="submitted && signupForm.controls['GSang'].errors" class="text-danger">
+                                <div style="margin-top: -10px;" *ngIf="submitted && signupForm.controls['groupe_sanguin'].errors" class="text-danger">
                                 
-                                <div *ngIf="submitted && signupForm.controls['GSang'].errors['cannotContainSpace']">
+                                <div *ngIf="submitted && signupForm.controls['groupe_sanguin'].errors['cannotContainSpace']">
                                     Espace non autorisé
                                 </div>
                                 </div>
                             </div>
                           
                             <div class="form-group col-md-6">
-                              <label for="tel">Téléphone<span class="obligatoire text-danger">*</span></label>
-                              <div [ngClass]="{'invalid':submitted && signupForm.controls['tel'].errors}" class="input-group input-group-alternative mb-3">
+                              <label for="telephone">Téléphone<span class="obligatoire text-danger">*</span></label>
+                              <div [ngClass]="{'invalid':submitted && signupForm.controls['telephone'].errors}" class="input-group input-group-alternative mb-3">
               
-                                <input formControlName="tel" class="form-control" type="number">
+                                <input formControlName="telephone" class="form-control" type="number">
                               </div>
-                                <div style="margin-top: -10px;" *ngIf="submitted && signupForm.controls['tel'].errors" class="text-danger">
-                                <div *ngIf="submitted && signupForm.controls['tel'].errors['required']">
+                                <div style="margin-top: -10px;" *ngIf="submitted && signupForm.controls['telephone'].errors" class="text-danger">
+                                <div *ngIf="submitted && signupForm.controls['telephone'].errors['required']">
                                     Le Numéro de téléphone est obligatoire!
                                 </div>
                                
@@ -139,28 +139,28 @@
               
               
                             <div class="form-group col-md-6">
-                              <label for="date">Date-Admission <span class="obligatoire text-danger">*</span> </label>
-                              <div [ngClass]="{'invalid':submitted && signupForm.controls['date'].errors}" class="input-group input-group-alternative mb-3">
+                              <label for="dateAdmission">Date-Admission <span class="obligatoire text-danger">*</span> </label>
+                              <div [ngClass]="{'invalid':submitted && signupForm.controls['dateAdmission'].errors}" class="input-group input-group-alternative mb-3">
               
-                                <input  formControlName="date"
+                                <input  formControlName="dateAdmission"
                                 type="date" class="form-control" autocomplete="on">
                               </div>
-                              <div style="margin-top: -10px;" *ngIf="submitted && signupForm.controls['date'].errors" class="text-danger">
-                                <div *ngIf="submitted && signupForm.controls['date'].errors['required']">
+                              <div style="margin-top: -10px;" *ngIf="submitted && signupForm.controls['dateAdmission'].errors" class="text-danger">
+                                <div *ngIf="submitted && signupForm.controls['dateAdmission'].errors['required']">
                                     La date est obligatoire!
                                 </div>
                                
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
-                              <label for="dateN">Date de Naissance <span class="obligatoire text-danger">*</span> </label>
-                              <div [ngClass]="{'invalid':submitted && signupForm.controls['dateN'].errors}" class="input-group input-group-alternative mb-3">
+                              <label for="dateNaiss">Date de Naissance <span class="obligatoire text-danger">*</span> </label>
+                              <div [ngClass]="{'invalid':submitted && signupForm.controls['dateNaiss'].errors}" class="input-group input-group-alternative mb-3">
               
-                                <input  formControlName="dateN"
+                                <input  formControlName="dateNaiss"
                                 type="date" class="form-control" autocomplete="on">
                               </div>
-                              <div style="margin-top: -10px;" *ngIf="submitted && signupForm.controls['dateN'].errors" class="text-danger">
-                                <div *ngIf="submitted && signupForm.controls['dateN'].errors['required']">
+                              <div style="margin-top: -10px;" *ngIf="submitted && signupForm.controls['dateNaiss'].errors" class="text-danger">
+                                <div *ngIf="submitted && signupForm.controls['dateNaiss'].errors['required']">
                                     La date est obligatoire!
                                 </div>
                                
