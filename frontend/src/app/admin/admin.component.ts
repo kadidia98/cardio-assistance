@@ -47,14 +47,14 @@ export class AdminComponent {
     public formBuilder: FormBuilder, private router: Router,) {
     //Crontôle de saisie du formulaire
     this.signupForm = this.formBuilder.group({
-      prenom: ['', [Validators.required, UsernameValidator.cannotContainSpace]],
       nom: ['', [Validators.required, UsernameValidator.cannotContainSpace]],
+      prenom: ['', [Validators.required, UsernameValidator.cannotContainSpace]],
       email: ['', [Validators.required, Validators.email]],
-      role: ['', Validators.required],
       password: ['', [Validators.required]],
+      role: ['', Validators.required],
       telephone: ['', Validators.required],
+      matricule: [''],
       etat: [true, Validators.required],
-      matricule: ['']
     }
     )
   }
@@ -101,18 +101,15 @@ export class AdminComponent {
   }
 
 
-  registerUser() {
+/*   registerUser() {
     this.submitted = true;
 
     if (this.signupForm.invalid) {
       return;
     }
     this.submitted = false;
-    if (this.invalid == true) {
-      this.confirm = "pas identique";
-
-    }
-    else {
+  
+     {
       this.confirm = '';
       const user = {
         nom: this.signupForm.value.nom,
@@ -142,7 +139,7 @@ export class AdminComponent {
     }
 
 
-  }
+  } */
 
   eyes(type: any) {
     if (type == "password") {

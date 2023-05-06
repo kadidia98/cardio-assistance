@@ -36,6 +36,7 @@ updateForm: FormGroup;
  /*  showcode: boolean;
   message: string; */
   errMsg : any;
+  showForm = false;
 
   searchTerm = '';
   term :any = '';
@@ -221,6 +222,9 @@ Archiver(id:any, etat:any){
 
 }
 
+
+
+
  onUpdate(){
 
 
@@ -284,6 +288,20 @@ Archiver(id:any, etat:any){
 }
 
 
+showFormEdit(id:any,prenom:any,nom:any,email:any){
+  if(this.showForm){
+    this.showForm =false 
+
+  }else{
+
+    this.getUserData(id,prenom,nom,email)
+    this.showForm = true
+  } 
+}
+
+reload(){
+  window.location.reload()
+}
 
 deleteUser(data: any){
   this.userService.deleteUser(data._id).subscribe(data => {

@@ -1,165 +1,166 @@
 <!-- Page content -->
-<div class="container-fluid mt--7">
-    <!-- Table -->
-    <div class="row">
-      <div class="col">
-        <div class="card shadow box" >
-          <div class="thead-light border-0 d-flex">
-            <h3 class="m-3">Table des actives</h3>
+<div class="container-fluid mt--7" *ngIf="!showForm">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow box">
+        <div class="thead-light border-0 d-flex">
+          <h3 class="m-3">Table des actives</h3>
           <!--   <input type="text"
               style="margin-left:37%; height: 40px; border-radius:15px; margin-top:1% ;" placeholder="Rechercher ici ...">
   
    -->
-  
-          <div class="search"  style="margin-left: 75%;">
-            <input class="inp"  [(ngModel)]="term" type="search">
-            <button class="btns btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill=#fff><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --> <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z "/></svg></button>
+
+          <div class="search" style="margin-left: 75%;">
+            <input class="inp" [(ngModel)]="term" type="search">
+            <button class="btns btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                fill=#fff><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z " />
+              </svg></button>
           </div>
         </div>
-          <div class="table-responsive">
-            <table class="table align-items-center border-info">
-  
-              <thead class="card-header ">
-                <tr class="debut">
-                  <th scope="col">Prenom</th>
-                  <th scope="col">Nom</th>
-                    <th scope="col">Matricule</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">Telephone</th>
-                  <th scope="col">Profil</th>
-                  <th scope="col"> Actions</th>
-                </tr>
-              </thead>
-              <tbody >
+        <div class="table-responsive">
+          <table class="table align-items-center border-info">
+
+            <thead class="card-header ">
+              <tr class="debut">
+                <th scope="col">Prenom</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Matricule</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telephone</th>
+                <th scope="col">Profil</th>
+                <th scope="col"> Actions</th>
+              </tr>
+            </thead>
+            <tbody>
               <!--  |filter:term  | paginate: { itemsPerPage: 5, currentPage: p } -->
-                <tr *ngFor="let user of countries | filter: term | paginate: { itemsPerPage: 5, currentPage: p } " >
-                    <td> {{user.prenom}}</td>
-                    <td> {{user.nom}} </td> 
-                    <td> {{user.matricule}} </td> 
-                  <td> {{user.email}} </td>
-                 
-                  <td>{{user.telephone}}</td>
-                    <td> {{user.profil}} </td>
-                   
-                  <td>
+              <tr *ngFor="let user of countries | filter: term | paginate: { itemsPerPage: 5, currentPage: p } ">
+                <td> {{user.prenom}}</td>
+                <td> {{user.nom}} </td>
+                <td> {{user.matricule}} </td>
+                <td> {{user.email}} </td>
+
+                <td>{{user.telephone}}</td>
+                <td> {{user.profil}} </td>
+
+                <td>
 
 
-                    <button class="btn" id="modifier" data-bs-toggle="modal"data-bs-target="#updateModal" title="modification" (click)="getUserData(user._id,user.prenom,user.nom,user.email)"><span class="material-symbols-outlined"><svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M8.75 10C11.5117 10 13.75 7.76172 13.75 5C13.75 2.23828 11.5117 0 8.75 0C5.98828 0 3.75 2.23828 3.75 5C3.75 7.76172 5.98828 10 8.75 10ZM12.25 11.25H11.5977C10.7305 11.6484 9.76562 11.875 8.75 11.875C7.73438 11.875 6.77344 11.6484 5.90234 11.25H5.25C2.35156 11.25 0 13.6016 0 16.5V18.125C0 19.1602 0.839844 20 1.875 20H12.6133C12.5195 19.7344 12.4805 19.4531 12.5117 19.168L12.7773 16.7891L12.8242 16.3555L13.1328 16.0469L16.1523 13.0273C15.1953 11.9453 13.8086 11.25 12.25 11.25ZM14.0195 16.9258L13.7539 19.3086C13.7109 19.707 14.0469 20.043 14.4414 19.9961L16.8203 19.7305L22.207 14.3438L19.4062 11.543L14.0195 16.9258ZM24.7266 10.5039L23.2461 9.02344C22.8828 8.66016 22.2891 8.66016 21.9258 9.02344L20.4492 10.5L20.2891 10.6602L23.0938 13.4609L24.7266 11.8281C25.0898 11.4609 25.0898 10.8711 24.7266 10.5039Z" fill="#49AAF0"/>
+                  <button class="btn" id="modifier" data-bs-toggle="modal" data-bs-target="#updateModal"
+                    title="modification" (click)="showFormEdit(user._id,user.prenom,user.nom,user.email)"
+                    ><span
+                      class="material-symbols-outlined"><svg width="25" height="20" viewBox="0 0 25 20" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M8.75 10C11.5117 10 13.75 7.76172 13.75 5C13.75 2.23828 11.5117 0 8.75 0C5.98828 0 3.75 2.23828 3.75 5C3.75 7.76172 5.98828 10 8.75 10ZM12.25 11.25H11.5977C10.7305 11.6484 9.76562 11.875 8.75 11.875C7.73438 11.875 6.77344 11.6484 5.90234 11.25H5.25C2.35156 11.25 0 13.6016 0 16.5V18.125C0 19.1602 0.839844 20 1.875 20H12.6133C12.5195 19.7344 12.4805 19.4531 12.5117 19.168L12.7773 16.7891L12.8242 16.3555L13.1328 16.0469L16.1523 13.0273C15.1953 11.9453 13.8086 11.25 12.25 11.25ZM14.0195 16.9258L13.7539 19.3086C13.7109 19.707 14.0469 20.043 14.4414 19.9961L16.8203 19.7305L22.207 14.3438L19.4062 11.543L14.0195 16.9258ZM24.7266 10.5039L23.2461 9.02344C22.8828 8.66016 22.2891 8.66016 21.9258 9.02344L20.4492 10.5L20.2891 10.6602L23.0938 13.4609L24.7266 11.8281C25.0898 11.4609 25.0898 10.8711 24.7266 10.5039Z"
+                          fill="#49AAF0" />
                       </svg>
-                      </span></button>
-                    <button class="btn" data-bs-toggle="modal" data-bs-target="#deleteModal" title="archiver"  (click)="Archiver(user._id, user.etat)"> <span class="material-symbols-outlined"> <svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M23.0312 9.375L24.8125 7.59375C25.0586 7.34766 25.0586 6.94922 24.8125 6.70312L23.9219 5.8125C23.6758 5.56641 23.2773 5.56641 23.0312 5.8125L21.25 7.59375L19.4688 5.8125C19.2227 5.56641 18.8242 5.56641 18.5781 5.8125L17.6875 6.70312C17.4414 6.94922 17.4414 7.34766 17.6875 7.59375L19.4688 9.375L17.6875 11.1562C17.4414 11.4023 17.4414 11.8008 17.6875 12.0469L18.5781 12.9375C18.8242 13.1836 19.2227 13.1836 19.4688 12.9375L21.25 11.1562L23.0312 12.9375C23.2773 13.1836 23.6758 13.1836 23.9219 12.9375L24.8125 12.0469C25.0586 11.8008 25.0586 11.4023 24.8125 11.1562L23.0312 9.375ZM8.75 10C11.5117 10 13.75 7.76172 13.75 5C13.75 2.23828 11.5117 0 8.75 0C5.98828 0 3.75 2.23828 3.75 5C3.75 7.76172 5.98828 10 8.75 10ZM12.25 11.25H11.5977C10.7305 11.6484 9.76562 11.875 8.75 11.875C7.73438 11.875 6.77344 11.6484 5.90234 11.25H5.25C2.35156 11.25 0 13.6016 0 16.5V18.125C0 19.1602 0.839844 20 1.875 20H15.625C16.6602 20 17.5 19.1602 17.5 18.125V16.5C17.5 13.6016 15.1484 11.25 12.25 11.25Z" fill="#FC0A0A"/>
+                    </span></button>
+                  <button class="btn" data-bs-toggle="modal" data-bs-target="#deleteModal" title="archiver"
+                    (click)="Archiver(user._id, user.etat)"> <span class="material-symbols-outlined"> <svg width="25"
+                        height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M23.0312 9.375L24.8125 7.59375C25.0586 7.34766 25.0586 6.94922 24.8125 6.70312L23.9219 5.8125C23.6758 5.56641 23.2773 5.56641 23.0312 5.8125L21.25 7.59375L19.4688 5.8125C19.2227 5.56641 18.8242 5.56641 18.5781 5.8125L17.6875 6.70312C17.4414 6.94922 17.4414 7.34766 17.6875 7.59375L19.4688 9.375L17.6875 11.1562C17.4414 11.4023 17.4414 11.8008 17.6875 12.0469L18.5781 12.9375C18.8242 13.1836 19.2227 13.1836 19.4688 12.9375L21.25 11.1562L23.0312 12.9375C23.2773 13.1836 23.6758 13.1836 23.9219 12.9375L24.8125 12.0469C25.0586 11.8008 25.0586 11.4023 24.8125 11.1562L23.0312 9.375ZM8.75 10C11.5117 10 13.75 7.76172 13.75 5C13.75 2.23828 11.5117 0 8.75 0C5.98828 0 3.75 2.23828 3.75 5C3.75 7.76172 5.98828 10 8.75 10ZM12.25 11.25H11.5977C10.7305 11.6484 9.76562 11.875 8.75 11.875C7.73438 11.875 6.77344 11.6484 5.90234 11.25H5.25C2.35156 11.25 0 13.6016 0 16.5V18.125C0 19.1602 0.839844 20 1.875 20H15.625C16.6602 20 17.5 19.1602 17.5 18.125V16.5C17.5 13.6016 15.1484 11.25 12.25 11.25Z"
+                          fill="#FC0A0A" />
                       </svg>
-                      
-                      </span></button>
-                  </td>
-  
-                  <!-- Modal Update -->
-    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">MODIFICATION</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div *ngIf="errMsg" class="alert alert-danger" role="alert">
-            <strong> Erreur </strong> Email déjà existant !
-          </div>
-          <!-- Ici nous avons le corps de notre modal : le formulaire de modification -->
-          <div class="modal-body">
-            <div class="container c_form" style=" padding: 10px;">
-              <!-- Table -->
-              <div class="box">
-               
-                <form role="form" class="row g-5"[formGroup]="updateForm" (ngSubmit)="onUpdate()">
-                  
-                  <div class="form-group col-md-6">
-                   
-                    <label for="prenom">Prénom <span class="obligatoire">*</span> </label>
-                    <div [ngClass]="{'invalid':submitted && updateForm.controls['prenom'].errors}"
-                      class="input-group input-group-alternative mb-3">
-                      <input formControlName="prenom"  type="text" class="form-control"  >
-                    </div>
-                    <div style="margin-top: -10px;" *ngIf="submitted && updateForm.controls['prenom'].errors"
-                      class="text-danger">
-                      <div *ngIf="submitted && updateForm.controls['prenom'].errors['required']">
-                        Le prenom est obligatoire!
-                      </div>
-                      <div *ngIf="submitted && updateForm.controls['prenom'].errors['cannotContainSpace']">
-                        Espace prénom autorisé
-                      </div>
-                    </div>
-                  </div>
-  
-  
-                  <div class="form-group col-md-6">
-  
-                    <label for="prenom">Nom <span class="obligatoire">*</span></label>
-                    <div [ngClass]="{'invalid':submitted && updateForm.controls['nom'].errors}"
-                      class="input-group input-group-alternative mb-3">
-  
-                      <input formControlName="nom"  class="form-control" type="text"  >
-                    </div>
-                    <div style="margin-top: -10px;" *ngIf="submitted && updateForm.controls['nom'].errors"
-                      class="text-danger">
-                      <div *ngIf="submitted && updateForm.controls['nom'].errors['required']">
-                        Le nom est obligatoire!
-                      </div>
-  
-                      <div *ngIf="submitted && updateForm.controls['nom'].errors['cannotContainSpace']">
-                        Espace non autorisé
-                      </div>
-                    </div>
-                  </div>
-  
-                  <div class="form-group col-md-6" style="margin-left: 130px;">
-                    <label for="email">Email <span class="obligatoire">*</span></label>
-                    <div [ngClass]="{'invalid':submitted && updateForm.controls['email'].errors}"
-                      class="input-group input-group-alternative mb-3">
-                      <input formControlName="email"  class="form-control" type="email"  >
-                    </div>
-                    <div style="margin-top: -10px;" *ngIf="submitted && updateForm.controls['email'].errors"
-                      class="text-danger">
-                      <div *ngIf="submitted && updateForm.controls['email'].errors['required']">
-                        Le mail est obligatoire!
-                      </div>
-                      <div *ngIf="submitted && updateForm.controls['email'].errors['email']">
-                        format incorrect
-                      </div>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-danger"  type="submit">Modifier</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-  
-          </div>
-  
+
+                    </span></button>
+                </td>
+
+              </tr>
+            </tbody>
+
+          </table>
         </div>
+
       </div>
     </div>
-                </tr>
-              </tbody>
-  
-            </table>
+  </div>
+  <!-- pagination -->
+  <div class="card-footer py-4 d-flex pagination fixed-bottom " style="justify-content: right;">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+  </div>
+
+  <!-- Button trigger modal -->
+
+</div>
+
+
+          <div class="w-50 card b shadow bg-opacity-75  m-auto mt-5"   *ngIf="showForm">
+          <h4 class="d-flex justify-content-center mt-4">Formulaire de modification</h4>
+
+              <form role="form" class="row mt-4 p-4 d-flex justify-content-center " [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+
+                <div class="form-group col-md-6 ">
+
+                  <label for="prenom">Prénom <span class="obligatoire">*</span> </label>
+                  <div [ngClass]="{'invalid':submitted && updateForm.controls['prenom'].errors}"
+                    class="input-group input-group-alternative mb-3">
+                    <input formControlName="prenom" type="text" class="form-control">
+                  </div>
+                  <div style="margin-top: -10px;" *ngIf="submitted && updateForm.controls['prenom'].errors"
+                    class="text-danger">
+                    <div *ngIf="submitted && updateForm.controls['prenom'].errors['required']">
+                      Le prenom est obligatoire!
+                    </div>
+                    <div *ngIf="submitted && updateForm.controls['prenom'].errors['cannotContainSpace']">
+                      Espace prénom autorisé
+                    </div>
+                  </div>
+
+
+
+                  <label for="prenom">Nom <span class="obligatoire">*</span></label>
+                  <div [ngClass]="{'invalid':submitted && updateForm.controls['nom'].errors}"
+                    class="input-group input-group-alternative mb-3">
+
+                    <input formControlName="nom" class="form-control" type="text">
+                  </div>
+                  <div style="margin-top: -10px;" *ngIf="submitted && updateForm.controls['nom'].errors"
+                    class="text-danger">
+                    <div *ngIf="submitted && updateForm.controls['nom'].errors['required']">
+                      Le nom est obligatoire!
+                    </div>
+
+                    <div *ngIf="submitted && updateForm.controls['nom'].errors['cannotContainSpace']">
+                      Espace non autorisé
+                    </div>
+                  </div>
+
+
+
+                  <label for="email">Email <span class="obligatoire">*</span></label>
+                  <div [ngClass]="{'invalid':submitted && updateForm.controls['email'].errors}"
+                    class="input-group input-group-alternative mb-3">
+                    <input formControlName="email" class="form-control" type="email">
+                  </div>
+                  <div style="margin-top: -10px;" *ngIf="submitted && updateForm.controls['email'].errors"
+                    class="text-danger">
+                    <div *ngIf="submitted && updateForm.controls['email'].errors['required']">
+                      Le mail est obligatoire!
+                    </div>
+                    <div *ngIf="submitted && updateForm.controls['email'].errors['email']">
+                      format incorrect
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="reload()">Annuler</button>
+                    &nbsp;
+                    <button type="button" class="btn btn-danger" type="submit">Modifier</button>
+                  </div>
+
+                </div>
+
+
+
+              </form>
+          
           </div>
-        
-        </div>
-      </div>
-    </div>
-      <!-- pagination -->
-       <div class="card-footer py-4 d-flex pagination fixed-bottom " style="justify-content: right;">
-        <pagination-controls (pageChange)="p = $event"></pagination-controls>
-  
-      </div>  
-  
-    <!-- Button trigger modal -->
-  
-  
+
+       
 
 
-    
