@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { UsernameValidator } from '../username.validator';
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -44,7 +44,7 @@ export class AdminComponent {
   changeMail: any = false;
   confirm: any = '';
   constructor(
-    public formBuilder: FormBuilder, private router: Router,) {
+    public formBuilder: FormBuilder,public UserService: UserService, private router: Router,) {
     //Crontôle de saisie du formulaire
     this.signupForm = this.formBuilder.group({
       nom: ['', [Validators.required, UsernameValidator.cannotContainSpace]],

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UserService } from "../user.service";
+import { UserService } from "../services/user.service";
 // nécessaire au controle de saisie du formulare de modification
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { UsernameValidator } from '../username.validator';

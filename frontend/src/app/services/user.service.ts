@@ -2,7 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import {User} from './user';
+import {User} from '../models/user';
+import { Patient } from '../models/patient';
 
 
 @Injectable({
@@ -52,6 +53,9 @@ export class UserService {
     return this.http.post('http://localhost:3000/endpoint/post', user);
   }
 
+  ajouterPatient(patient: Patient) {
+    return this.http.post('http://localhost:3000/endpoint/poster', patient);
+  }
   //Here we have user updating
   updateUser(id: any, data: any): Observable<any> {
     return this.http.put(

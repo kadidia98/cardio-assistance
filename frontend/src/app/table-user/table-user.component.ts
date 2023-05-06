@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from "../user.service";
+import { UserService } from "../services/user.service";
 // nécessaire au controle de saisie du formulare de modification
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { UsernameValidator } from './username.validator';
@@ -7,7 +7,7 @@ import { UsernameValidator } from './username.validator';
 
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
-import { User } from '../user';
+import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http';
 import { filter } from 'rxjs';
 

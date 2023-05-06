@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators ,FormControl } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { UsernameValidator } from '../username.validator';
+import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-admission-patient',
   templateUrl: './admission-patient.component.html',
@@ -24,19 +25,19 @@ confirm:any = '';
   /* registerForm !: FormGroup;
   submitted = false;
  */
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder ,private Userservice:UserService) {
     this.signupForm = this.formBuilder.group({
       prenom:['',[Validators.required ,UsernameValidator.cannotContainSpace]],
       nom:['',[Validators.required ,UsernameValidator.cannotContainSpace]],
-      email:['',[Validators.required,Validators.email]],
       sexe:['',Validators.required],
-      date:['',Validators.required],
-      dateN:['',Validators.required],
-      GSang:['',[Validators.required ,UsernameValidator.cannotContainSpace]],
+      groupe_sanguin:['',Validators.required],
       poids: ['', Validators.required],
-      tel: ['', Validators.required],
-      etat:[true, Validators.required],
-      matricule: ['']
+      telephone: ['', Validators.required],
+      dateNaiss:['', Validators.required],
+      dateAdmission: ['', Validators.required],
+      numero_dossier:['']
+
+      
   }
 )
    }
@@ -80,15 +81,17 @@ confirm:any = '';
       const user = {
         nom:this.signupForm.value.nom,
         prenom:this.signupForm.value.prenom,
-        email:this.signupForm.value.email,
-        password:this.signupForm.value.password,
+        groupe_sanguin:this.signupForm.value.groupe_sanguin,
+        poids:this.signupForm.value.poids,
         sexe:this.signupForm.value.sexe,
-        etat:this.signupForm.value.etat,
-        matricule : Math.random().toString(26).slice(2),
+        telephone:this.signupForm.value.telephone,
+        dateNaiss:this.signupForm.value.dateNaiss,
+        dateAdmission:this.signupForm.value.dateAdmission,
+        numero_dossier : Math.random().toString(26).slice(2),
 
       }
 
-       /*  this.UserService.ajout(user).subscribe(data =>{
+        this.Userservice.ajouterPatient(user).subscribe(data =>{
 
           this.message = data;
           if (this.message.emailExiste == true) {
@@ -100,7 +103,7 @@ confirm:any = '';
           }
 
 
-        }) */
+        }) 
 
     }
 
