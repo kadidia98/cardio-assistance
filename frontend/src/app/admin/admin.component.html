@@ -101,7 +101,7 @@
         <div class="modal-body ">
           <div class="row mb-3">
             <div class="form-group col-md-6">
-              <label for="prenom">Nom <span class="obligatoire">*</span> </label>
+              <label for="prenom">Prenom <span class="obligatoire">*</span> </label>
               <div [ngClass]="{'invalid':submitted && signupForm.controls['prenom'].errors}"
                 class="input-group input-group-alternative mb-3">
 
@@ -119,7 +119,7 @@
             </div>
 
             <div class="form-group col-md-6">
-              <label for="prenom">Prénom <span class="obligatoire">*</span></label>
+              <label for="nom">Nom <span class="obligatoire">*</span></label>
               <div [ngClass]="{'invalid':submitted && signupForm.controls['nom'].errors}"
                 class="input-group input-group-alternative mb-3">
 
@@ -157,7 +157,7 @@
               </div>
             </div>
             <div class="form-group col-md-6">
-              <label for="mdp">Mot de passe <span class="obligatoire">*</span></label>
+              <label for="password">Mot de passe <span class="obligatoire">*</span></label>
               <div [ngClass]="{'invalid':submitted && signupForm.controls['password'].errors}"
                 class="input-group input-group-alternative mb-3">
 
@@ -222,10 +222,10 @@
             </div>
 
             <div class="form-group col-md-6">
-              <label for="mdp_c">Téléphone <span class="obligatoire">*</span></label>
+              <label for="telephone">Téléphone <span class="obligatoire">*</span></label>
               <div [ngClass]="{'invalid':submitted && invalid }" class="input-group input-group-alternative mb-3">
 
-                <input class="form-control" formControlName="" type="tel">
+                <input class="form-control" formControlName="telephone" type="number">
 
 
               </div>

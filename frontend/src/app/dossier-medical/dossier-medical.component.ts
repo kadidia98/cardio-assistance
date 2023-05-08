@@ -1,5 +1,6 @@
 import { Component ,OnInit} from '@angular/core';
 import { Router } from '@angular/router'; 
+import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-dossier-medical',
   templateUrl: './dossier-medical.component.html',
@@ -9,7 +10,7 @@ export class DossierMedicalComponent  implements OnInit{
   AffichePatient = true;
   activeP =true;
   isactiveP=true;
-constructor(private router:Router,){
+constructor(private router:Router,private userService:UserService){
 
 }
 ngOnInit(): void {

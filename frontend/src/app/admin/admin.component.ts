@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
@@ -9,7 +9,7 @@ import { UserService } from '../services/user.service';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
-export class AdminComponent {
+export class AdminComponent implements OnInit {
   signupForm!: FormGroup
 
   prenom: any;
@@ -140,6 +140,59 @@ export class AdminComponent {
 
 
   } */
+  passeIdentique(){
+    if ( (this.signupForm.value.password != this.signupForm.value.passwordConfirm ) || (this.signupForm.value.passwordConfirm == '')) {
+      this.invalid = true;
+    }
+    else{
+      this.invalid = false;
+    }
+
+  }
+
+  registerUsers(){
+    this.submitted = true;
+    this.passeIdentique();
+    if(this.signupForm.invalid){
+      return;
+    }
+    this.submitted=false;
+    if (this.invalid == true) {
+      this.confirm = "pas identique";
+
+    }
+    else{
+      this.confirm = '';
+      const user = {
+        nom: this.signupForm.value.nom,
+        prenom: this.signupForm.value.prenom,
+        email: this.signupForm.value.email,
+        password: this.signupForm.value.password,
+        role: this.signupForm.value.role,
+        telephone: this.signupForm.value.telephone,
+        etat: this.signupForm.value.etat,
+        matricule: Math.random().toString(26).slice(2),
+
+      }
+
+        this.UserService.ajout(user).subscribe(data =>{
+
+          this.message = data;
+          if (this.message.emailExiste == true) {
+            this.changeMail = true;
+
+          } else {
+              Swal.fire('inscription reussit'),
+               setTimeout(()=>{ window.location.reload();}, 1000)
+          }
+
+
+        }) 
+
+    }
+
+
+  }
 
   eyes(type: any) {
     if (type == "password") {

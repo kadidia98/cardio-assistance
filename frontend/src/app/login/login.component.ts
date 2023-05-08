@@ -83,10 +83,10 @@ export class LoginComponent implements OnInit, OnDestroy {
               this.router.navigate(['/admin'])
             }
             else if ((tmp.data.role == 'secretaire')) {
-              this.router.navigate(['/secretaire'])
+              this.router.navigate(['/espaceSecretaire'])
             }
             else if ((tmp.data.role == 'medecin')) {
-              this.router.navigate(['/medecin'])
+              this.router.navigate(['/Dossier'])
             }
             
         /*     else{

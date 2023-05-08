@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DossierMedicalComponent } from './dossier-medical/dossier-medical.component';
 import { TableUserComponent } from './table-user/table-user.component';
 import { EspaceSecretaireComponent } from './espace-secretaire/espace-secretaire.component';
+import { DossierPComponent } from './dossier-p/dossier-p.component';
 const routes: Routes = [
   {path: '', component: LoginComponent},
 {path: 'admin', component: AdminComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
 {path: 'Dossier', component: DossierMedicalComponent},
 {path: 'table-user', component: TableUserComponent},
 {path: 'espaceSecretaire', component: EspaceSecretaireComponent},
+{path: 'Dos_patient', component: DossierPComponent},
 ];
 
 @NgModule({
