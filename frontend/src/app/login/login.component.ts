@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 // appellle service login
       this.userService.login(this.registerForm.value).subscribe(
         (data:any) => {
-          console.log(data);
+          console.log(data.role);
 
 
           let tmp = data;

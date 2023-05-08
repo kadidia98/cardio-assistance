@@ -90,7 +90,7 @@
   aria-hidden="true">
   <div class="modal-dialog  " role="document">
 
-    <form role="form" class="row g-5" [formGroup]="signupForm" (ngSubmit)="onSubmite()">
+    <form role="form" class="row g-5" [formGroup]="signupForm" (ngSubmit)="registerUser()">
       <div class="modal-content ok">
         <div class="modal-header text-center bordure">
           <h4 class="modal-title w-100 font-weight-bold">Création compte</h4>
@@ -206,8 +206,8 @@
 
                 <select formControlName="role" class="form-select">
                   <option selected></option>
-                  <option>Médecin</option>
-                  <option>Sécretaire</option>
+                  <option  value="medecin">Médecin</option>
+                  <option value="secretaire">Sécretaire</option>
                 </select>
               </div>
               <div style="margin-top: -10px;" *ngIf="submitted && signupForm.controls['role'].errors"
@@ -243,32 +243,12 @@
           </div>
         </div>
       </div>
+      
     </form>
   </div>
 </div>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+
+

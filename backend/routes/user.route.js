@@ -74,7 +74,7 @@ const userExpressRoute = express.Router();
 
  
 // This middelware show all users
- userExpressRoute.route('/').get(sec,(req, res) => {
+ userExpressRoute.route('/').get((req, res) => {
     UserSchema.find((error, data) => {
         if (error) {
             return next(error);
@@ -162,6 +162,8 @@ userExpressRoute.route('/post').post(async (req, res) => {
         await newUser.save();
 
         res.status(201).json(newUser);
+
+    console.log('inscription reussi !')
 
     } catch (error) {
         res.status(400).json({ message: "inscription echouer" })
