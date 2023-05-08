@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 // appellle service login
       this.userService.login(this.registerForm.value).subscribe(
         (data:any) => {
-          console.log(data);
+          console.log(data.role);
 
 
           let tmp = data;
@@ -83,10 +83,10 @@ export class LoginComponent implements OnInit, OnDestroy {
               this.router.navigate(['/admin'])
             }
             else if ((tmp.data.role == 'secretaire')) {
-              this.router.navigate(['/secretaire'])
+              this.router.navigate(['/espaceSecretaire'])
             }
             else if ((tmp.data.role == 'medecin')) {
-              this.router.navigate(['/medecin'])
+              this.router.navigate(['/Dossier'])
             }
             
         /*     else{

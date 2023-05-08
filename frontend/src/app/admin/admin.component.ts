@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
@@ -9,7 +9,7 @@ import { UserService } from '../services/user.service';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
-export class AdminComponent {
+export class AdminComponent implements OnInit{
   signupForm!: FormGroup
 
   prenom: any;
@@ -44,7 +44,7 @@ export class AdminComponent {
   changeMail: any = false;
   confirm: any = '';
   constructor(
-    public formBuilder: FormBuilder,public UserService: UserService, private router: Router,) {
+    public formBuilder: FormBuilder, private Userservice:UserService, private router: Router,) {
     //Crontôle de saisie du formulaire
     this.signupForm = this.formBuilder.group({
       nom: ['', [Validators.required, UsernameValidator.cannotContainSpace]],
@@ -101,37 +101,55 @@ export class AdminComponent {
   }
 
 
-/*   registerUser() {
+  registerUser() {
     this.submitted = true;
 
     if (this.signupForm.invalid) {
       return;
     }
     this.submitted = false;
-  
+    let matriculeGenerate;
      {
       this.confirm = '';
       const user = {
-        nom: this.signupForm.value.nom,
         prenom: this.signupForm.value.prenom,
+        nom: this.signupForm.value.nom,
         email: this.signupForm.value.email,
         password: this.signupForm.value.password,
         role: this.signupForm.value.role,
         telephone: this.signupForm.value.telephone,
         etat: this.signupForm.value.etat,
-        matricule: Math.random().toString(26).slice(2),
-
+        matricule:  this.signupForm.value.role =="medecin" ? matriculeGenerate= "MED"+(Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1))
+        :matriculeGenerate= "SEC"+(Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1))
+        
       }
+      
+      this.Userservice.ajout(user).subscribe(data =>{
+
+        this.message = data;
+        if (this.message.emailExiste == true) {
+          this.changeMail = true;
+
+        } else {
+            Swal.fire('inscription reussit'),
+             setTimeout(()=>{ window.location.reload();}, 1000)
+        }
 
 
+      }) 
+         //générer matricule pour administrateur et utilisateur
+  /*   let matriculeGenerate;
+    this.signupForm.value.role =="medecin" ? matriculeGenerate= "MED"+(Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1))
+      :matriculeGenerate= "SEC"+(Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1)); */
+     
 
-      if (this.message.emailExiste == true) {
+  /*     if (this.message.emailExiste == true) {
         this.changeMail = true;
 
       } else {
         Swal.fire('inscription reussit'),
           setTimeout(() => { window.location.reload(); }, 1000)
-      }
+      } */
 
 
 
@@ -139,7 +157,7 @@ export class AdminComponent {
     }
 
 
-  } */
+  } 
 
   eyes(type: any) {
     if (type == "password") {

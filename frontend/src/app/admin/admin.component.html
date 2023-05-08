@@ -90,7 +90,7 @@
   aria-hidden="true">
   <div class="modal-dialog  " role="document">
 
-    <form role="form" class="row g-5" [formGroup]="signupForm" (ngSubmit)="onSubmite()">
+    <form role="form" class="row g-5" [formGroup]="signupForm" (ngSubmit)="registerUser()">
       <div class="modal-content ok">
         <div class="modal-header text-center bordure">
           <h4 class="modal-title w-100 font-weight-bold">Création compte</h4>
@@ -101,7 +101,7 @@
         <div class="modal-body ">
           <div class="row mb-3">
             <div class="form-group col-md-6">
-              <label for="prenom">Nom <span class="obligatoire">*</span> </label>
+              <label for="prenom">Prenom <span class="obligatoire">*</span> </label>
               <div [ngClass]="{'invalid':submitted && signupForm.controls['prenom'].errors}"
                 class="input-group input-group-alternative mb-3">
 
@@ -119,7 +119,7 @@
             </div>
 
             <div class="form-group col-md-6">
-              <label for="prenom">Prénom <span class="obligatoire">*</span></label>
+              <label for="nom">Nom <span class="obligatoire">*</span></label>
               <div [ngClass]="{'invalid':submitted && signupForm.controls['nom'].errors}"
                 class="input-group input-group-alternative mb-3">
 
@@ -206,8 +206,8 @@
 
                 <select formControlName="role" class="form-select">
                   <option selected></option>
-                  <option>Médecin</option>
-                  <option>Sécretaire</option>
+                  <option  value="medecin">Médecin</option>
+                  <option value="secretaire">Sécretaire</option>
                 </select>
               </div>
               <div style="margin-top: -10px;" *ngIf="submitted && signupForm.controls['role'].errors"
@@ -222,10 +222,10 @@
             </div>
 
             <div class="form-group col-md-6">
-              <label for="mdp_c">Téléphone <span class="obligatoire">*</span></label>
+              <label for="telephone">Téléphone <span class="obligatoire">*</span></label>
               <div [ngClass]="{'invalid':submitted && invalid }" class="input-group input-group-alternative mb-3">
 
-                <input class="form-control" formControlName="" type="tel">
+                <input class="form-control" formControlName="telephone" type="number">
 
 
               </div>
@@ -243,32 +243,12 @@
           </div>
         </div>
       </div>
+      
     </form>
   </div>
 </div>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+
+
