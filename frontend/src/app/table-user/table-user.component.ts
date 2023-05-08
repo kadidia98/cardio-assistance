@@ -4,7 +4,6 @@ import { UserService } from "../services/user.service";
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { UsernameValidator } from './username.validator';
 
-
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 import { User } from '../models/user';
@@ -40,8 +39,8 @@ updateForm: FormGroup;
 
   searchTerm = '';
   term :any = '';
-  countries: any[] =
-  [
+  countries: any
+ /*  [
     {
        
         "prenom": "nana",
@@ -109,7 +108,7 @@ updateForm: FormGroup;
         "__v": 0
       }
   ] 
-
+ */
 
   constructor(
     private userService: UserService,
