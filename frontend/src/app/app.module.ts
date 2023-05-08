@@ -35,6 +35,7 @@ import { filter } from 'rxjs';
 import { AdmissionPatientComponent } from './admission-patient/admission-patient.component';
 import { DossierMedicalComponent } from './dossier-medical/dossier-medical.component';
 import { EspaceSecretaireComponent } from './espace-secretaire/espace-secretaire.component';
+import { DossierPComponent } from './dossier-p/dossier-p.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ TableUserComponent,
     ListePatientComponent,
     DossierMedicalComponent,
     EspaceSecretaireComponent,
-    SecretaireComponent
+    SecretaireComponent,
+    DossierPComponent
   ],
   imports: [
 

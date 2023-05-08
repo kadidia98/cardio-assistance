@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 // nécessaire au controle de saisie du formulare de modification
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { UsernameValidator } from '../username.validator';
+
+import { UsernameValidator } from './username.validator';
+
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 
@@ -31,7 +33,13 @@ updateForm: FormGroup;
   message: string;  */
   errMsg : any;
   showForm = false;
+
 data : any;
+
+
+  searchTerm = '';
+  term :any = '';
+ 
 
   constructor(
    

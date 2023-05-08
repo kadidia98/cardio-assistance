@@ -11,7 +11,7 @@ const sec = require('../middlewares/auth') ;
 
 const patientSchema = require('../model/patient.model')
 
-const TemperahumSchema = require('../model/temphum.model')
+//const TemperahumSchema = require('../model/temphum.model')
 //Here we are going to create a function(middelware) that can get user
 const userExpressRoute = express.Router();
 
@@ -204,6 +204,9 @@ userExpressRoute.route('/poster').post(async (req, res) => {
     }
 
 })
+
+
+
 
 
 //This middelware update one tempethum
