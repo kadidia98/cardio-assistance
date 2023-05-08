@@ -244,14 +244,14 @@ userExpressRoute.route('/poster').post(async (req, res) => {
 }); */
 
 //This middelware update one user
-/* userExpressRoute.route('/updateUser/:id').put( (req, res) => {
-    UserSchema.findByIdAndUpdate(req.params.id, { $set: req.body }, (error, data) => { */
+/userExpressRoute.route('/updateUser/:id').put( (req, res) => {
+    UserSchema.findByIdAndUpdate(req.params.id, { $set: req.body }, (error, data) => { 
     /*     const email = req.body.email;
         const oldUser = UserSchema.findOne({ email }); */
        /*  if (oldUser) {
             return res.status(200).json({ message: "Email Already Exist. Please Login", emailExiste: true });
         } */
-   /*       if (error) {
+          if (error) {
             return next(error);
         }  else {
             res.json(data);
@@ -259,7 +259,7 @@ userExpressRoute.route('/poster').post(async (req, res) => {
 
         }
     });
-}); */
+}); 
 
 
 //modifier mot de passe
@@ -310,6 +310,19 @@ userExpressRoute.route('/poster').post(async (req, res) => {
   
     
   }); */
+  //This middelware delete one user
+userExpressRoute.route('/deleteUser/:id').delete((req, res) => {
+    UserSchema.findByIdAndRemove(req.params.id, (error, data) => {
+        if (error) {
+            return next(error)
+        } else {
+            res.status(200).json({
+                msg: data
+            })
+
+        }
+    });
+});
 
 
         module.exports = userExpressRoute;

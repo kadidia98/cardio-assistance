@@ -33,7 +33,7 @@ export class AdminComponent implements OnInit{
   isActiveTable: boolean = true;
   isActiveArchive: boolean = false;
 
-
+  identifiant = localStorage.getItem('prenom') + ' ' + localStorage.getItem('nom');
 
 
 
