@@ -38,7 +38,7 @@ data : any;
 
 
   searchTerm = '';
-  term :any = '';
+
  
 
   constructor(
