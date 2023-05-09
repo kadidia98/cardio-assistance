@@ -25,9 +25,10 @@
 
             <thead class="card-header ">
               <tr class="debut">
+                <th scope="col">Matricule</th>
                 <th scope="col">Prenom</th>
                 <th scope="col">Nom</th>
-                <th scope="col">Matricule</th>
+                
                 <th scope="col">Email</th>
                 <th scope="col">Telephone</th>
                 <th scope="col">Profil</th>
@@ -37,9 +38,10 @@
             <tbody>
               <!--  |filter:term  | paginate: { itemsPerPage: 5, currentPage: p } -->
               <tr *ngFor="let user of users | filter: term | paginate: { itemsPerPage: 10, currentPage: p } ">
+                <td> {{user.matricule}} </td>
                 <td> {{user.prenom}}</td>
                 <td> {{user.nom}} </td>
-                <td> {{user.matricule}} </td>
+                
                 <td> {{user.email}} </td>
 
                 <td>{{user.telephone}}</td>
