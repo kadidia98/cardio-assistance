@@ -14,6 +14,8 @@ export class EspaceSecretaireComponent implements OnInit {
   identifiant = localStorage.getItem('prenom') + ' ' + localStorage.getItem('nom');
   isActiveTablep: boolean = true;
   isActiveAjoutp: boolean = false;
+
+
   constructor(private router:Router){
 
   }
