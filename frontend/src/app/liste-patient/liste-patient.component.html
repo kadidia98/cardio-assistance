@@ -1,76 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page-secretaire</title>
-</head>
-<body>
-
- <div class="container-fluid" style="min-height: 85vh;filter: contrast(95%);">
-    <div class="row ">
-      
-        <div class="col-lg-12" style="height:80vh;padding: 0;" *ngIf="showTab">
-               
-              
-                <div class="Patient mt-3 text-center ">
-                    <h5>Liste des Patients</h5>
-                </div>
-            <div class="container">
-                <div class="rechercher mt-5">
-                    <input type="text" placeholder="RECHERCHE"  autocomplete="off" title="Rechercher"><!-- <img src="/assets/isearch.png" style="background-color: #4AAAF0;color: white;height: 20px;"> -->
-
-                </div>
-                <table class="table a   lign=center mt-3">
-                    <thead style="background-color: #4AAAF0;color: white;">
-                        <tr align="center" >
-                        <th scope="col">Num-dossier</th>
-                        <th scope="col">Prenom</th>
-                        <th scope="col">Nom</th>
-                        <th scope="col">Date-d'admission</th>
-                        <th scope="col">Sexe</th>
-                        <th scope="col">Groupe-sanguin</th>
-                        <th scope="col">Action</th>
-                        
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr >
-                    <!-- <th scope="row">{{ book._id }}</th> -->
-                    <th scope="row">HCP09</th>
-                    <td align="center">Fatou</td>
-                    <td align="center">Ndiaye</td>
-                    <!-- <td>{{ book.tel }}</td> -->
-                    <td align="center">06/10/2022</td>
-                    <td align="center">Feminin</td>
-                    <td align="center">A+ <img src="/assets/isang.png" style="height:15px ;"></td>
-              
-                    
-                      <button (click)="switchTab()"  title="Dashboard" class="link-light" ><img src="/assets/dash.png" style="height:20px ;"></button>
-                      
-                      
-                      <!-- <a title="swicher"   class="link-light btn btn-sm btn-success"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/>
-                      </svg></a>
-              
-                      <a title="supprimer" class="link-light btn btn-sm btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16">
-                        <path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z"/>
-                      </svg></a>-->
-              
-              
-                   
-                  </tr>
-                  </tbody>
-                </table>
-            </div>
-
+<!-- Page content -->
+<div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+      <div class="col" >
+        <div class="card box shadow" *ngIf="showTab" >
+          <div class="thead-light border-0 d-flex">
+            <h3 class="m-3">Table des patients</h3>
+          </div>
+          <div class="search" style="margin-left: 75%">
+            <input class="inp" [(ngModel)]="term" type="search" />
+            <button class="btns btn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#fff">
+                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z " />
+              </svg>
+            </button>
+          </div>
+          <div class="table-responsive">
+            <table class="table align-items-center border-info">
+              <thead class="card-header">
+                <tr class="debut">
+                  <th scope="col">Numero dossier</th>
+                  <th scope="col">Nom</th>
+                  <th scope="col">Prenom</th>
+                  <th scope="col">Date Admission</th>
+                  <th scope="col">Sexe</th>
+                  <th scope="col">Groupe sanguin</th>
+                  <th scope="col">Telephone</th>
+                  <th scope="col">Dashboard</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="
+                      let patient of patients
+                       
+                      | filter : term
+                      | paginate : { itemsPerPage: 5, currentPage: p }" >
+                  <!--  | filter : term
+                  | paginate : { itemsPerPage: 5, currentPage: p } -->
+                  <td>{{ patient.numero_dossier }}</td>
+                  <td>{{ patient.nom }}</td>
+                  <td>{{ patient.prenom }}</td>
+                  <td>{{ patient.dateAdmission }}</td>
+                  <td>{{ patient.sexe }}</td>
+                  <td>{{ patient.groupe_sanguin }}</td>
+                  <td>{{  patient.telephone }}</td>
+                  <td>
+                    <button class="btn" 
+                    (click)="switchTab()"  title="Dashboard" class="link-light" ><svg width="33" height="23" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M61.0312 52.5H7.875V2.625C7.875 1.17469 6.99398 0 5.90625 0H1.96875C0.881016 0 0 1.17469 0 2.625V57.75C0 60.649 1.76326 63 3.9375 63H61.0312C62.119 63 63 61.8253 63 60.375V55.125C63 53.6747 62.119 52.5 61.0312 52.5ZM57.0938 5.25H42.5668C39.9361 5.25 38.6183 9.49102 40.4787 11.9716L44.4655 17.2873L35.4375 29.3262L26.4096 17.2889C24.8715 15.2381 22.3785 15.2381 20.8417 17.2889L12.3896 28.5584C11.6205 29.5838 11.6205 31.2457 12.3896 32.2711L15.1729 35.9822C15.942 37.0076 17.1884 37.0076 17.9575 35.9822L23.625 28.4238L32.653 40.4611C34.191 42.5119 36.684 42.5119 38.2208 40.4611L50.0333 24.7111L54.02 30.0267C55.8805 32.5073 59.0613 30.7502 59.0613 27.2426V7.875C59.0625 6.42469 58.1815 5.25 57.0938 5.25Z" fill="#FC0A0A"/>
+                        </svg>
+                                             
+                         </button>
+                  </td>
+  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
         </div>
-
         <app-dashboard *ngIf="!showTab"></app-dashboard>
+      </div>
     </div>
+   <!-- pagination -->
+   <div class="card-footer py-4 d-flex pagination fixed-bottom " style="justify-content: right;">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  
+  </div>
+  
+  </div>
 
-</div>
-</body>
-</html>
+<!-- <button (click)="switchTab()"  title="Dashboard" class="link-light" ><img src="/assets/dash.png" style="height:20px ;"></button> -->
+
+<!-- 
+ -->

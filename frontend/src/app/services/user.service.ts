@@ -41,7 +41,10 @@ export class UserService {
   listUser() {
     return this.http.get('http://localhost:3000/endpoint/ ');
   }
-  
+  //Here we have patient listing
+  listPatient(){
+    return this.http.get('http://localhost:3000/endpoint/allpatient')
+  }
 
 
 

@@ -6,7 +6,6 @@
       <div class="card box shadow">
         <div class="thead-light border-0 d-flex">
           <h3 class="m-3">Table des Archivés</h3>
-          <!--  <input type="text" [(ngModel)]="term" style="margin-left:37%; height: 40px; border-radius:15px; margin-top:1% ;" placeholder="Rechercher ici ..." > -->
         </div>
         <div class="search" style="margin-left: 75%">
           <input class="inp" [(ngModel)]="term" type="search" />
@@ -57,13 +56,7 @@
             </tbody>
           </table>
         </div>
-        <!-- pagination -->
-        <!--  <div
-            class="card-footer py-4 d-flex pagination fixed-bottom"
-            style="justify-content: right"
-          >
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>
-          </div> -->
+       
       </div>
     </div>
   </div>
@@ -72,5 +65,5 @@
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
 </div>
-  <!-- Button trigger modal -->
+
 </div>

@@ -1,6 +1,7 @@
 const express = require('express');
 
 const app = express();
+let patientSchema= require("../model/patient.model")
 let UserSchema = require("../model/user.model");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -9,7 +10,7 @@ const sec = require('../middlewares/auth') ;
 
 
 
-const patientSchema = require('../model/patient.model')
+//const patientSchema = require('../model/patient.model')
 
 //const TemperahumSchema = require('../model/temphum.model')
 //Here we are going to create a function(middelware) that can get user
@@ -84,6 +85,16 @@ const userExpressRoute = express.Router();
         }
     })
 }); 
+//middelware show all patients
+userExpressRoute.route('/allpatient').get((req, res)=>{
+    patientSchema.find((error, data)=>{
+        if(error){
+            return next(error);
+        }else{
+            res.json(data);
+        }
+    })
+})
 // This middelware show all users
 /* userExpressRoute.route('/temp').get((req,res) =>{
     TemperahumSchema.find((error,data) =>{
