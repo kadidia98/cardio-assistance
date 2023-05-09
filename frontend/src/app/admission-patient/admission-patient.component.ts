@@ -76,8 +76,10 @@ confirm:any = '';
       this.confirm = "pas identique";
 
     }
+    
     else{
       this.confirm = '';
+
       const user = {
         nom:this.signupForm.value.nom,
         prenom:this.signupForm.value.prenom,
@@ -87,7 +89,7 @@ confirm:any = '';
         telephone:this.signupForm.value.telephone,
         dateNaiss:this.signupForm.value.dateNaiss,
         dateAdmission:this.signupForm.value.dateAdmission,
-        numero_dossier : Math.random().toString(26).slice(2),
+        numero_dossier :  "Nd"+(Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1))
 
       }
 
