@@ -11,7 +11,7 @@ export class EspaceSecretaireComponent implements OnInit {
   afficheAjoutp = false
   activeTablep = false;
   activeAjoutp = false;
-
+  identifiant = localStorage.getItem('prenom') + ' ' + localStorage.getItem('nom');
   isActiveTablep: boolean = true;
   isActiveAjoutp: boolean = false;
 
