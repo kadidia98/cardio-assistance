@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 export class ListePatientComponent implements OnInit {
 
 showTab= true;
-
+showTabD=true;
 public patients:any = [];
 // nécessaire au controle de saisie du formulare de modification
   signupForm: FormGroup;
@@ -26,7 +26,8 @@ vide = false;
   p: number = 1;
 term: any;
 data: any
-
+showInfo = false
+showForm = false;
 
 constructor(
   private userService: UserService,
@@ -66,7 +67,22 @@ registerUser(){
 
 }
 
+getUserData(id:any,prenom:any,nom:any, sexe:any,groupe_sanguin:any, poids: any, telephone:any, dateNaiss:any, dateAdmission:any, numero_dossier:any){
 
+  this.signupForm = this.formBuilder.group({
+      id:[id],
+      prenom: [prenom],
+      nom: [nom],
+      sexe: [sexe],
+      groupe_sanguin:[groupe_sanguin],
+      poids: [poids],
+      telephone: [telephone],
+      dateNaiss:[dateNaiss],
+      dateAdmission: [dateAdmission],
+      numero_dossier:[numero_dossier]
+    });
+  console.log(id)
+}
 // function which list users
 loadUser(){
 this.userService.listPatient().subscribe((data:any) =>{
@@ -78,6 +94,32 @@ this.userService.listPatient().subscribe((data:any) =>{
 
 
 switchTab(){
-  this.showTab ? this.showTab = false : this.showTab = true
+  // this.showTab ? this.showTab = false : this.showTab = true
+  if (this.showTab) {
+    this.showTab = false
+    this.showInfo = true
+  } else {
+    this.showTab = true
+    this.showInfo = false
+  }
 }
+
+showFormEdit(id:any,prenom:any,nom:any,sexe:any , groupe_sanguin:any, poids: any, telephone:any, dateNaiss:any, dateAdmission:any, numero_dossier:any){
+  this.showForm = true;
+  // if(this.showForm){
+  //   this.showForm =false 
+
+  // }else{
+
+    this.getUserData(id,prenom,nom,sexe, groupe_sanguin, poids, telephone, dateNaiss, dateAdmission, numero_dossier)
+    // this.showForm = true
+    this.switchForm()
+  // } 
+}
+switchForm(){
+  if (this.showForm) {
+    this.showTab = false
+    this.showInfo = false
+  }
+} 
 }

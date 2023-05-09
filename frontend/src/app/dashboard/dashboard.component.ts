@@ -6,14 +6,14 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  showTabD=true;
+  /* showTabD=true; */
 constructor(private router:Router){
 
 }
 
-switchTab(){
+/* switchTab(){
   this.showTabD ? this.showTabD = false : this.showTabD = true
-}
+} */
 
 ngOnInit(): void {
     

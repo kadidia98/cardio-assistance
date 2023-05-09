@@ -10,6 +10,7 @@ export class DossierMedicalComponent  implements OnInit{
   AffichePatient = true;
   activeP =true;
   isactiveP=true;
+  identifiant = localStorage.getItem('prenom') + ' ' + localStorage.getItem('nom');
 constructor(private router:Router,private userService:UserService){
 
 }

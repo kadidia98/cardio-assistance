@@ -11,7 +11,7 @@
  <div class="container-fluid" style="min-height: 85vh;filter: contrast(95%);">
     <div class="row">
        
-        <div class="col-lg-12" style="height:85vh;padding: 0;" *ngIf="showTabD">
+        <div class="col-lg-12" style="height:85vh;padding: 0;" > <!-- *ngIf="showTabD" -->
                
                 <div class="container ">
                     <div class="row">
@@ -43,12 +43,7 @@
                                       </div>
                                 </div>
                             </div>
-                            <button class="btn1 mt-2" (click)="switchTab()" style="background-color: #4AAAF0;color: white;margin-left: 30%; width: 50%; padding: 2%;" > <span style="font-size: 1.2rem;">Dossier Medicale</span></button><br><br>
-
-
-                            <!-- popup -->
-        
-                            <!-- fin popup -->
+             
                         </div>
                        
                         
@@ -60,7 +55,7 @@
 
         </div>
         
-        <app-dossier-p *ngIf="!showTabD"></app-dossier-p>
+        <!-- <app-dossier-p *ngIf="!showTabD"></app-dossier-p> -->
         
     </div>
 
