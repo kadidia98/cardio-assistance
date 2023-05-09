@@ -14,6 +14,8 @@ export class EspaceSecretaireComponent implements OnInit {
 
   isActiveTablep: boolean = true;
   isActiveAjoutp: boolean = false;
+
+
   constructor(private router:Router){
 
   }
