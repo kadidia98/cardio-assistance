@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from "../services/user.service";
 // nécessaire au controle de saisie du formulare de modification
@@ -6,13 +6,16 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { UsernameValidator } from '../username.validator';
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
+import jsPDF from 'jspdf'; // importation de package pour le pdf
+import html2canvas from 'html2canvas'; // importation de package pour le pd
+
 @Component({
   selector: 'app-liste-patient',
   templateUrl: './liste-patient.component.html',
   styleUrls: ['./liste-patient.component.css']
 })
 export class ListePatientComponent implements OnInit {
-
+  @ViewChild('htmlData') htmlData!: ElementRef; // pour le téléchargement en pdf
 showTab= true;
 showTabD=true;
 public patients:any = [];
@@ -121,5 +124,30 @@ switchForm(){
     this.showTab = false
     this.showInfo = false
   }
-} 
+}
+
+
+  /* *****************************************************Téléchargement en pdf ******************/
+  
+  public openPDF(): void {
+    const title = 'Rapport de remplissage du';
+    let DATA: any = document.getElementById('htmlData');
+    html2canvas(DATA).then((canvas) => {
+      let fileWidth = 208;
+      let fileHeight = (canvas.height * fileWidth) / canvas.width;
+      const FILEURI = canvas.toDataURL('image/png');
+      const PDF = new jsPDF('p', 'mm', 'a4');
+      const position = 0;
+   
+      // Ajouter l'image
+      PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
+  
+      // Enregistrer le document PDF
+      PDF.save('dossier medical_pentien.pdf');
+    });
+  }
+  
+ 
+  
+  /* *****************************************************Téléchargement en pdf ******************/
 }

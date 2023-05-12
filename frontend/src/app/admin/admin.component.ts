@@ -64,7 +64,7 @@ export class AdminComponent implements OnInit{
   }
 
   destroy() {
-    localStorage.removeItem('token');
+    localStorage.clear();
     this.router.navigateByUrl('/')
   }
 

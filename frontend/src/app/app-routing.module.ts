@@ -10,17 +10,18 @@ import { DossierMedicalComponent } from './dossier-medical/dossier-medical.compo
 import { TableUserComponent } from './table-user/table-user.component';
 import { EspaceSecretaireComponent } from './espace-secretaire/espace-secretaire.component';
 import { DossierPComponent } from './dossier-p/dossier-p.component';
+import { AuthGuard } from './services/auth.guard';
 const routes: Routes = [
   {path: '', component: LoginComponent},
-{path: 'admin', component: AdminComponent},
-{path: 'secretaire', component: SecretaireComponent},
-{path: 'listP', component: ListePatientComponent},
-{path: 'Admission', component: AdmissionPatientComponent},
-{path: 'Dasboard', component: DashboardComponent},
-{path: 'Dossier', component: DossierMedicalComponent},
-{path: 'table-user', component: TableUserComponent},
-{path: 'espaceSecretaire', component: EspaceSecretaireComponent},
-{path: 'Dos_patient', component: DossierPComponent},
+{path: 'admin', component: AdminComponent, canActivate:[AuthGuard]},
+{path: 'secretaire', component: SecretaireComponent, canActivate:[AuthGuard]},
+{path: 'listP', component: ListePatientComponent, canActivate:[AuthGuard]},
+{path: 'Admission', component: AdmissionPatientComponent, canActivate:[AuthGuard]},
+{path: 'Dasboard', component: DashboardComponent, canActivate:[AuthGuard]},
+{path: 'Dossier', component: DossierMedicalComponent, canActivate:[AuthGuard]},
+{path: 'table-user', component: TableUserComponent, canActivate:[AuthGuard]},
+{path: 'espaceSecretaire', component: EspaceSecretaireComponent, canActivate:[AuthGuard]},
+{path: 'Dos_patient', component: DossierPComponent, canActivate:[AuthGuard]},
 ];
 
 @NgModule({

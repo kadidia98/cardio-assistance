@@ -88,6 +88,7 @@
 
 <div class="row " *ngIf="showForm">
     <div class="col-lg-5">
+       
 
 
         <!-- main app container -->
@@ -107,17 +108,23 @@
 
 
     </div>
-    <div class="col-lg-7 mt-3">
-        <div class="card  " style="  opacity: 85%; background-color:white; color:white">
-
+    
+    <div class="col-lg-7 mt-3" id="htmlData">
+        <div class="card  "  style="  opacity: 85%; background-color:white; color:white">
+            <div class="col-md-3 text-right">
+                <button class="btn  btn-block" style="color: #FC0A0A;" (click)="openPDF()">pdf</button>
+              </div>
             <div class="card-body  text-black ">
                 <!-- <h5 class="card-title text-center">Admission Patient</h5> -->
-
+               
                 <div>
+                   
                     <div class="container c_form " >
+                        
                         <!-- Table -->
+                        
                         <div class=""  >
-
+                            
                             <h2 class="text-center text-white "
                                 style="padding-top: 10px;background-color:#4AAAF0;padding: 2px;">Les Informations du
                                 patient</h2> 
@@ -207,14 +214,14 @@
 
                                 </div>
 
+                               
+                                
 
-
-
-                                <div style="text-align:center;">
-                                    <button type="submit" class="btn btn-danger text-white">Télécharger </button>
-                                </div>
+                                <!-- <div style="text-align:center;">
+                                    <button type="submit" class="btn btn-danger text-white" id="htmlData">Télécharger </button>
+                                </div> -->
                             </form>
-
+ 
                         </div>
                     </div>
 
