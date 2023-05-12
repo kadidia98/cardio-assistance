@@ -16,7 +16,7 @@ import { LoginComponent } from './login/login.component';
 
 import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { Socket } from 'socket.io-client';
 
 
 
@@ -36,14 +36,14 @@ import { AdmissionPatientComponent } from './admission-patient/admission-patient
 import { DossierMedicalComponent } from './dossier-medical/dossier-medical.component';
 import { EspaceSecretaireComponent } from './espace-secretaire/espace-secretaire.component';
 import { DossierPComponent } from './dossier-p/dossier-p.component';
-
+import { MychartComponent } from './mychart/mychart.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminComponent,
  DashboardComponent,
- 
+ MychartComponent,
 AdmissionPatientComponent,
     InscriptionComponent,
 
@@ -56,7 +56,9 @@ TableUserComponent,
     DossierMedicalComponent,
     EspaceSecretaireComponent,
     SecretaireComponent,
-    DossierPComponent
+    DossierPComponent,
+    MychartComponent
+ 
   ],
   imports: [
 
@@ -70,8 +72,8 @@ TableUserComponent,
     CommonModule,
  NgxPaginationModule,
  Ng2SearchPipeModule,
+
  
-    
 
 
   ],
