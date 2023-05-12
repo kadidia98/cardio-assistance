@@ -9,8 +9,8 @@ const temper = require('./model/temphum.model');
 const patient= require('./model/patient.model');
 const http = require('http');
 const server = http.createServer(app);
-//const { ErrorEvent } = require('events');
-//const { Server } = require("socket.io");
+const { ErrorEvent } = require('events');
+const { Server } = require("socket.io");
 
 
 
@@ -54,13 +54,13 @@ const port = process.env.PORT || 3000;
 });
 
 //initialisation socket
-/* var io = require("socket.io")(server); */
-/* io = require('socket.io')(server, 
+ var io = require("socket.io")(server); 
+io = require('socket.io')(server, 
     {     cors: 
         {origin: "*",
         methods: ["PUT", "GET", "POST", "DELETE", "OPTIONS"],
         credentials: false     }   
-    }); */
+    }); 
 
 //this middelware catch errors when the URL for endpoint is not correct and send them to the next
 app.use((req,res,next) =>{
@@ -79,27 +79,27 @@ app.use((err,req,res,next) =>{
 
 //température et humidité
 /* */
-/*
-io.on('connection', () => {
+
+/* io.on('connection', () => {
     console.log('a user connected');
   });
 parser.on('data', (data)=>{
 
     io.emit('temp',data)
-}) */
+})  */
 
- /* var Serialport = require('serialport');
+  var Serialport = require('serialport');
  const { error } = require('console');
  var Readline = Serialport.parsers.Readline;
   var serialport=`require('serialport')`;
- var port2 = new Serialport('/dev/ttyACM0', {
+ var port2 = new Serialport('/dev/ttyUSB0', {
       baudRate: 9600
  });
 
-  const parser = port2.pipe(new Readline({ delimiter: '\r\n' })) */
-//  console.log(parser);
+  const parser = port2.pipe(new Readline({ delimiter: '\r\n' })) 
+ console.log(parser);
 
-/* var temoin = '0';
+ var temoin = '0';
 io.on('connection', (socket) => {
     console.log('vent connected!');
     socket.on('vent', (arg)=>{ 
@@ -110,47 +110,25 @@ io.on('connection', (socket) => {
        
     })
   });
-   */
-/* parser.on("data", (data)=>{
+   
+  parser.on("data", (data)=>{
     console.log(data);
     let tempy = data.split('/')
      let temperer = tempy[0]
     let humidy = tempy[1]
  console.log(humidy);
-const Data = temper; */
- 
+const Data = temper;
+  //calcul de la date et l'heure 
 
-  /*   var tempe = parseInt(temperer);
-    var humi = parseInt(humidy); */
-  
-    //l'objet qui contient la temperature, humidite et la date +l'insertion de la temperature et de l'humidite à 8h
-     
 
-   
-/* if (sec == 00 || sec == 020 || sec == 40){io.emit('value', true);}
-if (sec == 10 || sec == 030 || sec == 50){io.emit('value', false);} */
+io.emit('temp', data);
+
+
 
 
  
-
-   // module.exports = {"température":température, "humidité":humidité};
-   
-/* io.on("value", (data)=> {
-    console.log(data + 'ff');
-     port2.write(data)
-    port2.drain((err) => {
-        console.log(err);
-    }) 
-}); 
- */
-
-
-
-
-
-/* io.on('18h', data => {
-    observer.next(data);
-  });
- */
+ port2.write(temoin);
+ console.log(temoin);
 
                     
+});
