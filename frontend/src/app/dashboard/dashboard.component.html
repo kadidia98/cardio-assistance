@@ -1,9 +1,9 @@
 
 
- <div class="container-fluid" style="min-height: 85vh;filter: contrast(95%);">
+ <div class="container-fluid" style="filter: contrast(95%);">
     <div class="row">
        
-        <div class="col-lg-12" style="height:85vh; padding: 0;" > <!-- *ngIf="showTabD" -->
+        <div class="col-lg-12" style=" height: 85vh; padding: 0;" > <!-- *ngIf="showTabD" -->
                
                 <div class="container ">
                     <div class="row">
@@ -44,12 +44,13 @@
                        
                         
                     </div>
-                    <h5 style="background-color: red;text-align:center;">ECG DU PATIENT</h5>
-                    <app-mychart></app-mychart>
+                    
                 </div>
+                <div style="margin-top: -5rem;">
                 
-                
-
+                <h5 style="background-color: red;text-align:center; ">ECG DU PATIENT</h5>
+                <app-mychart></app-mychart>
+            </div>
         </div>
         
         <!-- <app-dossier-p *ngIf="!showTabD"></app-dossier-p> -->
