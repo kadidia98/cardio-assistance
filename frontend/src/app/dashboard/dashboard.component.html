@@ -17,11 +17,15 @@
                                 <h5  style="text-align:center ;">Nom et Prenom du patient</h5>
                                 <div class="col-lg-6 mt-2">
                                     <div class="card" style="width: 18rem;">
+
+            
                                         <h6 style="text-align:center ;color:white;background-color:black;">Pulse(BPM)</h6>
                                         <div class="card-body">
                                           <p>Pulse cardiaque:</p>
                                           <img src="/assets/pulse.png" style="height:40px ;margin-left:50%" alt="">
-                                          <p>122(bpm)</p>
+
+                                          <p *ngIf="bpm != '0/'">{{bpm}}</p>
+                                          <p *ngIf=" bpm == undefined " style="font-size: 40px;">données indisponible, Verifier votre systeme</p>
                                         </div>
                                       </div>
                                 </div>

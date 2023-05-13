@@ -20,13 +20,13 @@ public dataa=1;
     });
   }
 
-  getHeur() {
+/*   getHeur() {
     return new Observable(observer => {
       this.socket.on('Heure', data => {
         observer.next(data);
       });
     });
-  }
+  } */
 
 
   getInfo() {
@@ -40,14 +40,14 @@ public dataa=1;
 
 
 
-  getVent() {
+/*   getVent() {
     return new Observable(observer => {
       this.socket.on('value', data => {
         observer.next(data);
       });
     });
   }
-
+ */
 
   
 }
