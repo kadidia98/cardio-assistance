@@ -3,30 +3,34 @@
 
         <div class="col-lg-12" style=" height: 85vh; width: 84%; padding: 0;"> <!-- *ngIf="showTabD" -->
 
-            <div class="container ">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <img src="/assets/rythmecardio.gif" style="height:70% ;" alt="">
-                    </div>
+ <div class="container-fluid" style="filter: contrast(95%);">
+    <div class="row">
+       
+        <div class="col-lg-12" style=" height: 85vh; padding: 0;" > <!-- *ngIf="showTabD" -->
+               
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <img src="/assets/rythmecardio.gif" style="height:70% ;" alt="">
+                        </div>
+                       
+                        <div class="col-lg-7 mt-2" style="height:40% ;padding: 10px; border:1px solid rgba(97, 93, 93, 0.904);border-radius: 10px;">
 
-                    <div class="col-lg-7 mt-2"
-                        style="height:40% ;padding: 10px; border:1px solid rgba(97, 93, 93, 0.904);border-radius: 10px;">
+                            <div class="row">
+                                <h5  style="text-align:center ;">Nom et Prenom du patient</h5>
+                                <div class="col-lg-6 mt-2">
+                                    <div class="card" style="width: 18rem;">
 
-                        <div class="row">
-                            <h5 style="text-align:center ;">Nom et Prenom du patient</h5>
-                            <div class="col-lg-6 mt-2">
-                                <div class="card" style="width: 18rem;">
+            
+                                        <h6 style="text-align:center ;color:white;background-color:black;">Pulse(BPM)</h6>
+                                        <div class="card-body">
+                                          <p>Pulse cardiaque:</p>
+                                          <img src="/assets/pulse.png" style="height:40px ;margin-left:50%" alt="">
 
-
-                                    <h6 style="text-align:center ;color:white;background-color:black;">Pulse(BPM)</h6>
-                                    <div class="card-body">
-                                        <p>Pulse cardiaque:</p>
-                                        <img src="/assets/pulse.png" style="height:40px ;margin-left:50%" alt="">
-
-                                        <p *ngIf="bpm != '0/'">{{bpm}}</p>
-                                        <p *ngIf=" bpm == undefined " style="font-size: 40px;">données indisponible,
-                                            Verifier votre systeme</p>
-                                    </div>
+                                          <p *ngIf="bpm != '0/'">{{bpm}}</p>
+                                          <p *ngIf=" bpm == undefined " style="font-size: 20px; color:red;">données indisponible, Verifier votre capteur svp!</p>
+                                        </div>
+                                      </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 mt-2">
@@ -45,12 +49,16 @@
 
 
                 </div>
-
-            </div>
-            <div style="margin-top: -5rem;">
-
-                <h5 style="background-color: red;text-align:center; ">ECG DU PATIENT</h5>
+                <div style="margin-top: -10rem;">
+                
+                <h5 style="background-color: red;text-align:center; ">EVOLUTION DU RYTHME CARDIAQUE PATIENT</h5>
+                <div class="d-flex">
                 <app-mychart></app-mychart>
+                
+                 <div class="imgHom">
+                    <img src="/assets/homcardiaque.jpg" alt="monimage" style="height: 20rem;margin-top:2rem">
+                 </div>
+                </div>
             </div>
         </div>
 
