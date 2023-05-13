@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js/auto';
-
+import { SocketService } from '../services/socket.service';
+import {Socket, io }from 'socket.io-client';
 @Component({
   selector: 'app-mychart',
   templateUrl: './mychart.component.html',
@@ -8,10 +9,34 @@ import { Chart } from 'chart.js/auto';
 })
 export class MychartComponent  implements OnInit{
   public chart: any;
+  temp! :any [];
+  bpm: any;
+  donnee:any
+  constructor( private SocketService: SocketService){
+    this.socket = io('ws://localhost:3000');
+  }
+  private socket: Socket;
+
 
   ngOnInit(): void {
       this.createChart();
+
+      this.SocketService.getTemp().subscribe((data) =>{
+        //console.log(data);
+         this.donnee = data
+       this.bpm = data
+       console.log(this.bpm);
+       
+      
+        
+      
+        })
+
   }
+
+ 
+
+
   createChart(){
   
     this.chart = new Chart("MyChart", {
@@ -23,8 +48,7 @@ export class MychartComponent  implements OnInit{
 	       datasets: [
           {
             label: "Sales",
-            data: ['467','576', '572', '79', '92',
-								 '574', '573', '576'],
+            data: 'bpm',
             backgroundColor: 'blue'
           }
         ]
