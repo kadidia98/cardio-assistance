@@ -92,7 +92,7 @@ parser.on('data', (data)=>{
  const { error } = require('console');
  var Readline = Serialport.parsers.Readline;
   var serialport=`require('serialport')`;
- var port2 = new Serialport('/dev/ttyACM1', {
+ var port2 = new Serialport('/dev/ttyACM0', {
       baudRate: 9600
  });
 
