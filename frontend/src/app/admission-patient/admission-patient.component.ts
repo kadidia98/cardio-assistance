@@ -22,6 +22,7 @@ inputType_pwd_c = 1;
 message:any
 changeMail:any = false;
 confirm:any = '';
+
   /* registerForm !: FormGroup;
   submitted = false;
  */

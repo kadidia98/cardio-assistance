@@ -25,7 +25,7 @@
                                           <img src="/assets/pulse.png" style="height:40px ;margin-left:50%" alt="">
 
                                           <p *ngIf="bpm != '0/'">{{bpm}}</p>
-                                          <p *ngIf=" bpm == undefined " style="font-size: 40px;">données indisponible, Verifier votre systeme</p>
+                                          <p *ngIf=" bpm == undefined " style="font-size: 20px; color:red;">données indisponible, Verifier votre capteur svp!</p>
                                         </div>
                                       </div>
                                 </div>
@@ -46,10 +46,16 @@
                     </div>
                     
                 </div>
-                <div style="margin-top: -5rem;">
+                <div style="margin-top: -10rem;">
                 
-                <h5 style="background-color: red;text-align:center; ">ECG DU PATIENT</h5>
+                <h5 style="background-color: red;text-align:center; ">EVOLUTION DU RYTHME CARDIAQUE PATIENT</h5>
+                <div class="d-flex">
                 <app-mychart></app-mychart>
+                
+                 <div class="imgHom">
+                    <img src="/assets/homcardiaque.jpg" alt="monimage" style="height: 20rem;margin-top:2rem">
+                 </div>
+                </div>
             </div>
         </div>
         
