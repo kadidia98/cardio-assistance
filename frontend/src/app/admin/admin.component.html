@@ -94,10 +94,13 @@
       <div class="modal-content ok">
         <div class="modal-header text-center bordure">
           <h4 class="modal-title w-100 font-weight-bold">Création compte</h4>
+         
           <button type="reset" class="close" data-bs-dismiss="modal" aria-label="Close" (click)="reset()">
             <span aria-hidden="true">&times;</span>
           </button>
+          
         </div>
+        <div class="text-danger text-center" *ngIf="changeMail">mail existe déja</div>
         <div class="modal-body ">
           <div class="row mb-3">
             <div class="form-group col-md-6">

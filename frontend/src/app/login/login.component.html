@@ -23,8 +23,13 @@
                 </svg>
                 
         </div>
+
+        <p class="  text-center " style="color: red; margin-top: 80px;" *ngIf="showcode " >
+          {{message}}
+        </p>
         
         <form role="form" class="format p" [formGroup]="registerForm" (ngSubmit)="loginUser()">
+         
           <div class="mm">
           <label for="email">Email</label>
           <div class="form-group mb-3 ">
