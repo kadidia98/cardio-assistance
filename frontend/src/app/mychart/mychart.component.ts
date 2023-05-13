@@ -48,9 +48,11 @@ export class MychartComponent  implements OnInit{
 	       datasets: [
           {
             label: "Sales",
-            data: 'bpm',
+            data: ['467','576', '572', '79', '92',
+								 '574', '573', '576'],
             backgroundColor: 'blue'
-          }
+          },
+         
         ]
       },
       options: {
