@@ -10,7 +10,7 @@ groupe_sanguin: { type:String},
 poids:{ type:String},
 telephone: {type:Number},
 
-dateNaiss: { type:Date},
+
  dateAdmission: { type: Date}  ,
  numero_dossier: {type:String}
 
