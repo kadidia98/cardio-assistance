@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js/auto';
 import { SocketService } from '../services/socket.service';
 import {Socket, io }from 'socket.io-client';
+
 @Component({
   selector: 'app-mychart',
   templateUrl: './mychart.component.html',
@@ -10,7 +11,7 @@ import {Socket, io }from 'socket.io-client';
 export class MychartComponent  implements OnInit{
   public chart: any;
   temp! :any [];
-  bpm: any;
+  bpm!: any [];
   donnee:any
   constructor( private SocketService: SocketService){
     this.socket = io('ws://localhost:3000');
@@ -19,13 +20,15 @@ export class MychartComponent  implements OnInit{
 
 
   ngOnInit(): void {
-      this.createChart();
-
+    //   let tab = ['467','576', '572', '79', '92',
+    //   '574', '573', '576']
+    let tab:any=[];
       this.SocketService.getTemp().subscribe((data) =>{
-        //console.log(data);
-         this.donnee = data
-       this.bpm = data
-       console.log(this.bpm);
+          //console.log(data);
+          this.donnee = data
+          tab.push(this.donnee)
+          this.createChart(tab);
+       console.log("test: ",this.donnee);
        
       
         
@@ -37,7 +40,7 @@ export class MychartComponent  implements OnInit{
  
 
 
-  createChart(){
+  createChart(btmnt:any){
   
     this.chart = new Chart("MyChart", {
       type: 'line', //this denotes tha type of chart
@@ -48,8 +51,7 @@ export class MychartComponent  implements OnInit{
 	       datasets: [
           {
             label: "Sales",
-            data: ['467','576', '572', '79', '92',
-								 '574', '573', '576'],
+            data:btmnt,
             backgroundColor: 'blue'
           },
          
