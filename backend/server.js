@@ -92,7 +92,7 @@ parser.on('data', (data)=>{
  const { error } = require('console');
  var Readline = Serialport.parsers.Readline;
   var serialport=`require('serialport')`;
- var port2 = new Serialport('/dev/ttyUSB0', {
+ var port2 = new Serialport('/dev/ttyACM0', {
       baudRate: 9600
  });
 
@@ -100,7 +100,7 @@ parser.on('data', (data)=>{
  console.log(parser);
 
  var temoin = '0';
-io.on('connection', (socket) => {
+/* io.on('connection', (socket) => {
     console.log('vent connected!');
     socket.on('vent', (arg)=>{ 
         
@@ -109,14 +109,12 @@ io.on('connection', (socket) => {
     console.log(arg) 
        
     })
-  });
+  }); */
    
   parser.on("data", (data)=>{
     console.log(data);
-    let tempy = data.split('/')
-     let temperer = tempy[0]
-    let humidy = tempy[1]
- console.log(humidy);
+   
+ 
 const Data = temper;
   //calcul de la date et l'heure 
 
@@ -127,8 +125,8 @@ io.emit('temp', data);
 
 
  
- port2.write(temoin);
- console.log(temoin);
+ //port2.write(temoin);
+ //console.log(temoin);
 
                     
 });
