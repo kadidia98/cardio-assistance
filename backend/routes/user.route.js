@@ -125,9 +125,9 @@ userExpressRoute.route('/allpatient').get((req, res)=>{
 // });
 
 
-//This middelware show one user
-/* userExpressRoute.route('/user/:id').get((req, res) => {
-    UserSchema.findById(req.params.id, (error, data) => {
+//This middelware show one patient
+ userExpressRoute.route('/patient/:id').get((req, res) => {
+    PatientSchema.findById(req.params.id, (error, data) => {
         if (error) {
             return next(error);
         } else {
@@ -135,7 +135,7 @@ userExpressRoute.route('/allpatient').get((req, res)=>{
 
         }
     });
-}); */
+}); 
 
 //This middelware create an user 
 

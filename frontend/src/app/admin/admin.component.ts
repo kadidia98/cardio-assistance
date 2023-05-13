@@ -133,7 +133,9 @@ export class AdminComponent implements OnInit{
         this.message = data;
         if (this.message.emailExiste == true) {
           this.changeMail = true;
-
+          setTimeout(() => {
+            window.location.reload();
+          }, 3000);
         } else {
             Swal.fire('inscription reussit'),
              setTimeout(()=>{ window.location.reload();}, 1000)

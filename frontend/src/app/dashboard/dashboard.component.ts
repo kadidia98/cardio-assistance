@@ -1,6 +1,7 @@
 import { Component ,OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import {Socket, io }from 'socket.io-client';
+import { UserService } from '../services/user.service';
 import { SocketService } from '../services/socket.service';
 @Component({
   selector: 'app-dashboard',
