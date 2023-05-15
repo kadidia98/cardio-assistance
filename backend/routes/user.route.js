@@ -126,7 +126,7 @@ userExpressRoute.route('/allpatient').get((req, res)=>{
 
 
 //This middelware show one patient
- userExpressRoute.route('/patient/:id').get((req, res) => {
+ userExpressRoute.route('/Onepatient/:id').get((req, res) => {
     PatientSchema.findById(req.params.id, (error, data) => {
         if (error) {
             return next(error);
