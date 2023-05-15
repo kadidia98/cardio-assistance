@@ -41,7 +41,7 @@
                       let patient of patients
                        
                       | filter : term
-                      | paginate : { itemsPerPage: 5, currentPage: p }">
+                      | paginate : { itemsPerPage: 10, currentPage: p }">
                                 <!--  | filter : term
                   | paginate : { itemsPerPage: 5, currentPage: p } -->
                                 <td>{{ patient.numero_dossier }}</td>
@@ -168,7 +168,7 @@
 
 
                                 <div class="form-group col-md-4">
-                                    <label for="poids">Poids </label>
+                                    <label for="poids">Poids (Kg) </label>
                                     <div class="input-group input-group-alternative mb-3">
 
                                         <input formControlName="poids" class="form-control" type="text">
