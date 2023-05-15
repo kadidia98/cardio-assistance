@@ -46,7 +46,9 @@ export class UserService {
     return this.http.get('http://localhost:3000/endpoint/allpatient')
   }
 
-
+  OnePatient(id: any) {
+    return this.http.get('http://localhost:3000/endpoint/Onepatient/ :id' + id);
+  }
 
   //Here we have user deleting
   deleteUser(id: any) {
@@ -59,6 +61,7 @@ export class UserService {
   ajouterPatient(patient: Patient) {
     return this.http.post('http://localhost:3000/endpoint/poster', patient);
   }
+
   //Here we have user updating
   updateUser(id: any, data: any): Observable<any> {
     return this.http.put(
