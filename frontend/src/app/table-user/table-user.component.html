@@ -93,7 +93,9 @@
 
           <div class="w-50 card b shadow bg-opacity-75  m-auto mt-5"   *ngIf="showForm">
           <h4 class="d-flex justify-content-center mt-4">Formulaire de modification</h4>
-
+          <div *ngIf="errMsg" class="  text-center" style="color: red;" >
+          <strong > Erreur: </strong> Email déjà existant !
+        </div>
               <form role="form" class="row mt-4 p-4 d-flex justify-content-center " [formGroup]="updateForm" (ngSubmit)="onUpdate()">
 
                 <div class="form-group col-md-6 ">
