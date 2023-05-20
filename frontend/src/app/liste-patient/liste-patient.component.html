@@ -47,7 +47,7 @@
                                 <td>{{ patient.numero_dossier }}</td>
                                 <td>{{ patient.nom }}</td>
                                 <td>{{ patient.prenom }}</td>
-                                <td>{{ patient.dateAdmission }}</td>
+                                <td>{{ patient.dateAdmission ?.split('T')[0] }}</td>
                                 <td>{{ patient.sexe }}</td>
                                 <td>{{ patient.groupe_sanguin }}
                                 </td>
