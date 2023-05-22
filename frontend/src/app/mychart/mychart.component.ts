@@ -24,6 +24,7 @@ export class MychartComponent implements OnInit {
       this.bpm = data;
       tab.push(this.bpm);
       this.updateChart(tab);
+      console.log(tab);
     });
   }
 
