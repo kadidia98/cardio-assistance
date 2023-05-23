@@ -143,7 +143,7 @@ switchForm(){
       PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
   
       // Enregistrer le document PDF
-      PDF.save('dossier medical_pentien.pdf');
+      PDF.save('dossier medical_patient.pdf');
     });
   }
   
