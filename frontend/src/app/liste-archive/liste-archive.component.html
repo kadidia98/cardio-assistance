@@ -21,26 +21,28 @@
           <table class="table align-items-center border-info">
             <thead class="card-header">
               <tr class="debut">
+                <th scope="col">Matricule</th>
                 <th scope="col">Prenom</th>
                 <th scope="col">Nom</th>
+                
                 <th scope="col">Email</th>
-                <th scope="col">Matricule</th>
-                <th scope="col">Actions</th>
+                <th scope="col">Telephone</th>
+                <th scope="col">Profil</th>
+                <th scope="col"> Actions</th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="
-                    let user of users
-                     
-                    | filter : term
-                    | paginate : { itemsPerPage: 5, currentPage: p }" >
-                <!--  | filter : term
-                | paginate : { itemsPerPage: 5, currentPage: p } -->
-                <td>{{ user.prenom }}</td>
-                <td>{{ user.nom }}</td>
-                <td>{{ user.email }}</td>
+              <tr *ngFor="let user of users | filter: term | paginate: { itemsPerPage: 10, currentPage: p } ">
+                <td> {{user.matricule}} </td>
+                <td> {{user.prenom}}</td>
+                <td> {{user.nom}} </td>
+                
+                <td> {{user.email}} </td>
 
-                <td>{{ user.matricule }}</td>
+                <td>{{user.telephone}}</td>
+                <td> {{user.role}} </td>
+
+                
 
                 <td>
                   <button class="btn" data-bs-toggle="modal" data-bs-target="#switchModal"
